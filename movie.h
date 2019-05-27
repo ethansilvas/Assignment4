@@ -1,16 +1,12 @@
 //------------------------------- movie.h --------------------------------------
 //
-// Ethan Silvas, Pranav CSS 343 B
-// Creation Date: April 13, 2019
-// Date of Last Modification: April 27, 2019
+// Ethan Silvas, Pranav Sakthivel CSS 343 B
+// Creation Date: May 26, 2019
+// Date of Last Modification: 
 //------------------------------------------------------------------------------
-// Purpose - This class will create a binary search tree without a remove
-// function. It will be able to read a series of strings from a text file
-// to build the tree.
+// Purpose - 
 // -----------------------------------------------------------------------------
-// Assumptions: There will not be any removing anything from the tree,
-// and it is assumed that the text file containing all of the strings ends with
-// "$$" to signify that the file is done.
+// Assumptions: 
 // ----------------------------------------------------------------------------
 
 #ifndef MOVIE_H
