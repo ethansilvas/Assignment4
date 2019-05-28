@@ -35,6 +35,7 @@ public:
     //operator overloads
     virtual bool operator<(const Movie& rhs) const = 0;
     virtual bool operator==(const Movie& rhs) const = 0;
+    virtual bool operator>(const Movie& rhs) const = 0;
 protected:
     Movie();
 

@@ -57,7 +57,7 @@ void Classic::parseData(const string& line) {
 		&& this->majorActor == classicCast.majorActor);
 }//end of ==
 
- bool Classic::operator<(const Movie& movie) const {
+bool Classic::operator<(const Movie& movie) const {
 	const Classic& classicCast = static_cast<const Classic&>(movie);
 
 	if (this->year < classicCast.year)
@@ -90,6 +90,10 @@ void Classic::parseData(const string& line) {
     {
         return false;
     }
+}//end of <
+
+bool Classic::operator>(const Movie& movie) const {
+	return !(*this < movie);
 }//end of <
 
 void Classic::display() const {

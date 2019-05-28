@@ -30,7 +30,7 @@ bool Drama::operator==(const Movie& movie) const{
 	return (this->title == dramaCast.title && this->director == dramaCast.director);
 } //end of ==
 
- bool Drama::operator<(const Movie& movie) const {
+bool Drama::operator<(const Movie& movie) const {
 	const Drama& dramaCast = static_cast<const Drama&>(movie);
 
 	if (this->director < dramaCast.director){
@@ -45,6 +45,10 @@ bool Drama::operator==(const Movie& movie) const{
         return false;
     }
 }// end of <
+
+bool Drama::operator>(const Movie& movie) const {
+	return !(*this < movie);
+}// end of >
 
 void Drama::display() const { 
 	cout << left << setw(22) << title << " "

@@ -28,6 +28,7 @@ public:
     //operator overloads
     virtual bool operator==(const Movie& rhs) const;
 	virtual bool operator<(const Movie& rhs) const;
+    virtual bool operator>(const Movie& rhs) const;
 
 protected:
     void parseData(const string& line);
