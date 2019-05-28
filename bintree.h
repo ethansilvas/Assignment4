@@ -16,36 +16,24 @@
 #ifndef BINTREE_H
 #define BINTREE_H
 
-#include "nodedata.h"
+#include "movie.h"
 
 class BinTree
 {
-    //overloaded output operator
-    friend ostream &operator<<(ostream &outStream, const BinTree &tree);
 public:
     //constructors and destructor
     BinTree();
-    BinTree(const BinTree& otherTree);
     ~BinTree();
-
-    //operator overloads
-    BinTree& operator=(const BinTree &otherTree);
-    bool operator==(const BinTree &otherTree) const;
-	bool operator!=(const BinTree &otherTree) const;
 
     //tree operations
     bool isEmpty() const;
     void makeEmpty();
-    bool insert(NodeData* newNode);
-    bool retrieve(const NodeData &nodeToFind, NodeData* &foundNode) const;
-    void displaySideways() const;
-    int getHeight(const NodeData &nodeToFind) const;
-    void bstreeToArray(NodeData* array[]);
-    void arrayToBSTree(NodeData* array[]);
+    bool insert(Movie* newNode);
+    bool retrieve(const Movie &nodeToFind, Movie* &foundNode) const;
 private:
     struct Node
     {
-        NodeData* data;
+        Movie* data;
         Node* left;
         Node* right;
     };
@@ -54,20 +42,12 @@ private:
 
     //constructor helpers
     void deleteTree(Node* subTreeRoot);
-    Node* copyTree(const Node* subTreeRoot) const;
-
-    //overload helpers
-    bool equalityHelper(Node* first, Node* second) const;
 
     //tree operation helpers
     void sideways(Node* current, int level) const;
-    bool insertHelper(Node*& subTreeRoot, NodeData* newNode);
+    bool insertHelper(Node*& subTreeRoot, Movie* newNode);
     void inorderHelper(Node* subTreeRoot) const;
-    bool retrieveHelper(Node* subTreeRoot, const NodeData &nodeToFind, NodeData* &foundNode) const;
-    int getHeightFinder(Node* subTreeRoot, const NodeData &nodeToFind) const;
-    int getHeightCalc(Node* subTreeRoot) const;
-    void toArrayHelper(Node* subTreeRoot, NodeData* array[], int& index);
-    void toBSTHelper(Node* subTreeRoot, NodeData* array[], int start, int end);
+    bool retrieveHelper(Node* subTreeRoot, const Movie &nodeToFind, Movie* &foundNode) const;
 };
 
 #endif

@@ -54,6 +54,10 @@ bool Comedy::operator<(const Movie& movie) const {
     }
 }//end of <
 
+bool Comedy::operator>(const Movie& movie) const {
+	return !(*this < movie);
+}//end of >
+
 void Comedy::display() const
 {
     cout << left << setw(22) << this->title << " "
