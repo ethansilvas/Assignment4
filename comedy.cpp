@@ -35,21 +35,28 @@ Comedy::Comedy(const string& line) {
 bool Comedy::operator==(const Movie& movie) const {
 	const Comedy& comedyCast = static_cast<const Comedy&>(movie);
 	return (title == comedyCast.title && year == comedyCast.year);
-}//end operator ==
+}//end of ==
 
 bool Comedy::operator<(const Movie& movie) const {
 	const Comedy& comedyCast = static_cast<const Comedy&>(movie);
 
-	if (title < comedyCast.title)
+	if (this->title < comedyCast.title)
     {
         return true;
     }
-	else if (title == comedyCast.title)
+	else if (this->title == comedyCast.title)
     {
-        return (year < comedyCast.year);
+        return (this->year < comedyCast.year);
 	}
 	else
     {
         return false;
     }
-}//end operator <
+}//end of <
+
+void Comedy::display() const
+{
+    cout << left << setw(22) << this->title << " "
+		 << setw(18) << this->director << " "
+		 << setw(5) << this->year << endl;
+} //end of display
