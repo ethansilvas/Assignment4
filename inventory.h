@@ -12,9 +12,19 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 
+#include "bintree.h"
+#include "moviefactory.h"
+#include "movie.h"
+#include <fstream>
+
 class Inventory
 {
-
+public:
+    void processInventory(ifstream & dataFile);
+private:
+    BinTree comedyBST;
+    BinTree dramaBST;
+    BinTree classicBST;
 };
 
 #endif
