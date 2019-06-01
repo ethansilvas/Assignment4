@@ -16,11 +16,11 @@ Movie* MovieFactory::createMovie(const string& line)
     Movie* movie = NULL;
     switch (line[0])
     {
-        case 'D':
-            movie =  (Movie*) new Drama(line);
-            break;
         case 'F':
             movie = (Movie*) new Comedy(line);
+            break;
+        case 'D':
+            movie =  (Movie*) new Drama(line);
             break;
         case 'C':
             movie = (Movie*) new Classic(line);

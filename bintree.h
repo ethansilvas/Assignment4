@@ -3,6 +3,8 @@
 // Ethan Silvas, CSS 343 B
 // Creation Date: April 13, 2019
 // Date of Last Modification: April 27, 2019
+//
+// Reused class from assignment 2
 //------------------------------------------------------------------------------
 // Purpose - This class will create a binary search tree without a remove
 // function. It will be able to read a series of strings from a text file
