@@ -32,6 +32,11 @@ Comedy::Comedy(const string& line) {
     parseData(line);
 }
 
+Comedy::~Comedy()
+{
+    
+}
+
 bool Comedy::operator==(const Movie& movie) const {
 	const Comedy& comedyCast = static_cast<const Comedy&>(movie);
 	return (title == comedyCast.title && year == comedyCast.year);

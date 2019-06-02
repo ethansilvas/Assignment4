@@ -21,6 +21,7 @@ class Inventory
 {
 public:
     void processInventory(ifstream & dataFile);
+    void displayInventory();
 private:
     BinTree comedyBST;
     BinTree dramaBST;
