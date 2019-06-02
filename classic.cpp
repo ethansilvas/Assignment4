@@ -31,6 +31,11 @@ Classic::Classic(const string& line) {
     parseData(line);
 }
 
+Classic::~Classic()
+{
+    
+}
+
 void Classic::parseData(const string& line) {
     stringstream ss;
     ss << line;

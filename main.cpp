@@ -9,7 +9,22 @@
 // Assumptions: 
 // -----------------------------------------------------------------------------
 
+#include "store.h"
+
 int main()
 {
+    Store store;
+
+    ifstream movies("data4movies.txt");
+    if (!movies)
+    {
+        cout << "File not found" << endl;
+    }
+    else
+    {
+        store.readData(movies);
+    }
+    
+
     return 0;
 }

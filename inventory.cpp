@@ -1,6 +1,6 @@
 #include "inventory.h"
 
-void Inventory::processInventory(ifstream & dataFile)
+void Inventory::processInventory(ifstream& dataFile)
 {
     string line;
 
@@ -30,4 +30,11 @@ void Inventory::processInventory(ifstream & dataFile)
                 break;
         }
     }
+}
+
+void Inventory::displayInventory()
+{
+    comedyBST.inorderDisplay();
+    dramaBST.inorderDisplay();
+    classicBST.inorderDisplay();
 }

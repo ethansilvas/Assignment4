@@ -24,7 +24,6 @@ public:
     virtual ~Movie();
 
     //utility methods
-    virtual void setData();
     virtual bool increaseStock(int); 
     virtual bool dicreaseStock(); 
     virtual int getStock(); 

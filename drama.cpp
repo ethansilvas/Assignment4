@@ -24,6 +24,10 @@ Drama::Drama(const string& line) {
     parseData(line);
 }
 
+Drama::~Drama()
+{
+    
+}
 
 bool Drama::operator==(const Movie& movie) const{
 	const Drama& dramaCast = static_cast<const Drama&>(movie);
