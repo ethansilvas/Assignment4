@@ -177,3 +177,19 @@ bool BinTree::insertHelper(Node*& subTreeRoot, Movie* newNode)
         }
     }
 } //end of insertHelper
+
+void BinTree::inorderDisplay()
+{
+    inorderHelper(this->root);
+    cout << endl;
+}
+
+void BinTree::inorderHelper(Node* subTreeRoot) const
+{
+    if (subTreeRoot != NULL)
+    {
+        inorderHelper(subTreeRoot->left);
+        subTreeRoot->data->display();
+        inorderHelper(subTreeRoot->right);
+    }
+}

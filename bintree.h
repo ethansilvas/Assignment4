@@ -32,6 +32,7 @@ public:
     void makeEmpty();
     bool insert(Movie* newNode);
     bool retrieve(const Movie &nodeToFind, Movie* &foundNode) const;
+    void inorderDisplay();
 private:
     struct Node
     {
