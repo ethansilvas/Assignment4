@@ -25,7 +25,7 @@ public:
 
     //utility methods
     virtual bool increaseStock(int); 
-    virtual bool dicreaseStock(); 
+    virtual bool decreaseStock(); 
     virtual int getStock(); 
     
     //pure virtuals

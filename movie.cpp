@@ -58,7 +58,7 @@ bool Movie::increaseStock(int addToStock) {
     }
 }
 
-bool Movie::dicreaseStock() {
+bool Movie::decreaseStock() {
     if (stock <= 0)
     { 
         return false; 
