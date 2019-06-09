@@ -24,7 +24,6 @@ int main()
     {
         store.readData(movies);
     }
-    
 
     return 0;
 }

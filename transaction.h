@@ -11,13 +11,13 @@ class Transaction
 public:
     Transaction();
     virtual ~Transaction();
+
     virtual void processTransaction(const string line, Customer* cust, Inventory* inv, HashTable& customers);
-    string getErrors();
-    
+    string getErrors();  
 protected:
-    bool customerValid(Customer*, int);
-    string errors = "";
-    void addError(string);
+    bool customerValid(Customer* cust, const int id);
+    string errors;
+    void addError(const string error);
 };
 
 #endif //TRANSACTION_H

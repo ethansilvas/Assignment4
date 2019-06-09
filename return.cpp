@@ -14,4 +14,11 @@ void Return::processTransaction(const string line, Customer* cust, Inventory* in
     ss << currentLine;
 
     ss >> newID;
+    newCustomer = customers.getCustomer(newID);
+
+    if (customerValid(newCustomer, newID))
+    {
+        getline(ss, currentLine);
+        
+    }
 }
