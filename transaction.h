@@ -12,10 +12,10 @@ class Transaction
     public:
     Transaction();
     virtual ~Transaction();
-    virtual void processTransaction(string, Customer*, Inventory*);
+    virtual void processTransaction(string, Customer&, Inventory&);
     string getErrors();
     static const char DVD = 'D';
-    
+
     protected:
     bool customerValid(Customer*, int);
     string errors = "";

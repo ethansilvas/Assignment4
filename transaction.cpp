@@ -10,7 +10,7 @@ Transaction::~Transaction()
 
 }
 
-void Transaction::processTransaction(string s, Customer* cust, Inventory* inv)
+void Transaction::processTransaction(string s, Customer& cust, Inventory& inv)
 {
 
 }
