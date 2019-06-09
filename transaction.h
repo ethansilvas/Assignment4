@@ -11,9 +11,8 @@ class Transaction
 public:
     Transaction();
     virtual ~Transaction();
-    virtual void processTransaction(string, Customer*, Inventory*);
+    virtual void processTransaction(const string line, Customer* cust, Inventory* inv, HashTable& customers);
     string getErrors();
-    static const char DVD = 'D';
     
 protected:
     bool customerValid(Customer*, int);

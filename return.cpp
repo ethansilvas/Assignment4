@@ -4,7 +4,7 @@ Return::Return() {}
 
 Return::~Return() {}
 
-void Return::processTransaction(string line, Customer& cust, Inventory& inv)
+void Return::processTransaction(const string line, Customer* cust, Inventory* inv, HashTable& customers)
 {
     string currentLine;
     int newID;
