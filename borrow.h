@@ -17,6 +17,11 @@ class Borrow : public Transaction
     ~Borrow();
     virtual void processTransaction(string, Customer&, Inventory&);
     static const char type = 'B';
+
+    protected:
+
+    void borrowMovie(Customer*, Movie*, Movie*);
+    void readTransaction(string info, Customer* cust, Inventory& inv);
 };
 
-#endif
+#endif //BORROW_H
