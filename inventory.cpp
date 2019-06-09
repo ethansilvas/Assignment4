@@ -38,3 +38,22 @@ void Inventory::displayInventory()
     dramaBST.inorderDisplay();
     classicBST.inorderDisplay();
 }
+
+Movie* Inventory::retriveMovie(Movie* movie, const char type)
+{
+    switch (type)
+    {
+        case 'D':
+            return dramaBST.retrieve(movie);
+            break;
+        case 'F':
+            return comedyBST.retrieve(movie);
+            break;
+        case 'C':
+            return classicBST.retrieve(movie);
+            break;
+        default:
+            break;
+    }
+    return NULL;
+}

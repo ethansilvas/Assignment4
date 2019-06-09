@@ -31,7 +31,7 @@ public:
     bool isEmpty() const;
     void makeEmpty();
     bool insert(Movie* newNode);
-    bool retrieve(const Movie &nodeToFind, Movie* &foundNode) const;
+    Movie* retrieve(const Movie* nodeToFind) const; //, Movie* &foundNode) const;
     void inorderDisplay();
 private:
     struct Node
@@ -50,7 +50,7 @@ private:
     void sideways(Node* current, int level) const;
     bool insertHelper(Node*& subTreeRoot, Movie* newNode);
     void inorderHelper(Node* subTreeRoot) const;
-    bool retrieveHelper(Node* subTreeRoot, const Movie &nodeToFind, Movie* &foundNode) const;
+    Movie* retrieveHelper(Node* subTreeRoot, const Movie* nodeToFind) const; //, Movie* &foundNode) const;
 };
 
 #endif
