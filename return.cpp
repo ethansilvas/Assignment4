@@ -1,10 +1,13 @@
 #include "return.h"
 
-Return::Return() {}
+Return::Return() 
+{
+    errors = "";
+}
 
 Return::~Return() {}
 
-void Return::processTransaction(const string line, Customer* customer, Inventory* inventory, HashTable& customers)
+void Return::processTransaction(const string line, Customer* customer, StoreInventory* inventory, HashTable& customers)
 {
     string currentLine;
     int newID;
@@ -23,7 +26,7 @@ void Return::processTransaction(const string line, Customer* customer, Inventory
     }
 }
 
-void Return::readTransaction(const string line, Customer* customer, Inventory* inventory)
+void Return::readTransaction(const string line, Customer* customer, StoreInventory* inventory)
 {
     stringstream ss;
     ss << line;
