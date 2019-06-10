@@ -1,27 +1,20 @@
 #ifndef BORROW_H
 #define BORROW_H
-#include <string>
-#include <iostream>
-#include <fstream>
+
 #include "customer.h"
 #include "storeinventory.h"
 #include "transaction.h"
-#include <stdio.h>
-using namespace std;
+#include "hashtable.h"
 
 class Borrow : public Transaction
 {
-
-    public:
+public:
     Borrow();
     ~Borrow();
-    virtual void processTransaction(string, Customer*, StoreInventory*, HashTable&);
-    static const char type = 'B';
-
-    protected:
-
-    void borrowMovie(Customer*, Movie*, Movie*);
-    void readTransaction(string info, Customer* cust, StoreInventory* inv);
+    virtual void processTransaction(const string line, Customer* customer, StoreInventory* inventory, HashTable& customers);
+protected:
+    void readTransaction(const string info, Customer* customer, StoreInventory* inventory);
+    void doBorrow(Customer* customer, Movie* movieBorrow, Movie* movieCopy);
 };
 
 #endif //BORROW_H

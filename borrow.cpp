@@ -10,61 +10,120 @@ Borrow::~Borrow()
     
 }
 
-void Borrow::processTransaction(string s, Customer* cust, StoreInventory* inv, HashTable& ht)
+void Borrow::processTransaction(const string line, Customer* customer, StoreInventory* inventory, HashTable& customers)
 {
-    string tmp;
+    string currentLine;
     int id;
-    //Customer * customer = nullptr;
+    Customer* newCustomer = NULL;
+
     stringstream stream;
-    stream << s;
+    stream << line;
 
     stream >> id;
+    newCustomer = customers.getCustomer(id);
 
-    if (customerValid(cust, id))
+    if (customerValid(newCustomer, id))
     {
-        getline(stream, tmp);
-        readTransaction(tmp, cust, inv);
+        getline(stream, currentLine);
+        readTransaction(currentLine, newCustomer, inventory);
     }
-
 }
 
-void Borrow::borrowMovie(Customer*, Movie*, Movie*)
+void Borrow::readTransaction(const string line, Customer* customer, StoreInventory* inventory)
 {
-    
-}
+    stringstream ss;
+    ss << line;
 
-void Borrow::readTransaction(string info, Customer* cust, StoreInventory* inv)
-{
-    stringstream stream;
-    char movie, media;
-    string tmp1, tmp2, majorActor;
-    int year=0, month=0;
-    Movie* tempMovie = nullptr;
-    Movie* custMovie = nullptr;
+    char movieType, mediaType;
+    string movieData1, movieData2;
+    string majorActor;
+    int month = 0, year = 0;
+    Movie* movieCopy = NULL;
+    Movie* customerMovie = NULL;
 
-    stream << info;
-    stream >> media;
+    ss >> mediaType;
 
-    if (media == 'D')
+    if (mediaType == 'D')
     {
-        stream >> movie;
-        switch (movie)
+        ss >> movieType;
+
+        switch (movieType)
         {
+            case 'F':
+                //read title and year
+                getline(ss, movieData2, ',');
+                getline(ss, movieData1);
+                
+                //hold the year and make a new comedy with it
+                stringstream(movieData1) >> year;
+                movieCopy = new Comedy(movieData2, year);
+
+                //get movie and try to return 
+                customerMovie = inventory->retrieveMovie(movieCopy, movieType);
+                doBorrow(customer, customerMovie, movieCopy);
+                delete movieCopy;
+                movieCopy = NULL;
+                break;
+            case 'D':
+                //read director and title
+                getline(ss, movieData2, ',');
+                getline(ss, movieData1, ',');
+
+                //create copy and attempt return
+                movieCopy = new Drama(movieData1, movieData2);
+                customerMovie = inventory->retrieveMovie(movieCopy, movieType);
+                doBorrow(customer, customerMovie, movieCopy);
+                delete movieCopy;
+                movieCopy = NULL;
+                break;
             case 'C':
-                getline(stream, tmp1, ' ');
-                getline(stream, tmp1, ' ');
-                stringstream(tmp1) >> month;
-                getline(stream, tmp1, ' ');
-                stringstream(tmp1) >> year;
-                stream >> tmp1;
+                //get month 
+                getline(ss, movieData1, ' ');
+                getline(ss, movieData1, ' ');
+                stringstream(movieData1) >> month;
 
-                majorActor = majorActor + tmp1 + ' ';
-                stream >> tmp1;
-                majorActor += tmp1;
+                //get year
+                getline(ss, movieData1, ' ');
+                stringstream(movieData1) >> year;
 
-                //tempMovie = new Classic(majorActor, month, year); //Add constructor
-                //custMovie = 
+                ss >> movieData1;
+                majorActor += movieData1;
 
+                movieCopy = new Classic(majorActor, month, year);
+                customerMovie = inventory->retrieveMovie(movieCopy, movieType);
+                doBorrow(customer, customerMovie, movieCopy);
+                delete movieCopy;
+                movieCopy = NULL;
+                break;
+            default:
+                //get the invalid char and print out error message
+                getline(ss, movieData1);
+                string invalidMovie(1, movieType);
+                addError("Invalid movie type: " + invalidMovie + movieData1);
+                break;
         }
+    }
+    else
+    {
+        //get the invalid char and print error message
+        string invalidMedia(1, mediaType);
+        getline(ss, movieData1);
+        addError("Invalid media type: " + invalidMedia + movieData1);
+    }
+}
+
+void Borrow::doBorrow(Customer* customer, Movie* movieBorrow, Movie* movieCopy)
+{
+    if (movieBorrow != NULL)
+    {
+        bool validBorrow = customer->returnMovie(movieBorrow);
+        if (!validBorrow)
+        {
+            addError(customer->getCustomerInfo() + "/n" + "Invalid borrow: " + movieBorrow->getInfo());
+        }
+    }
+    else
+    {
+        addError("Movie cannot be borrowed: " + movieCopy->getInfo());
     }
 }
