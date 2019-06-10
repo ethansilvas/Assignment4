@@ -14,7 +14,7 @@ void Return::processTransaction(const string line, Customer* customer, StoreInve
     Customer* newCustomer = NULL;
 
     stringstream ss;
-    ss << currentLine;
+    ss << line;
 
     ss >> newID;
     newCustomer = customers.getCustomer(newID);
@@ -105,7 +105,7 @@ void Return::readTransaction(const string line, Customer* customer, StoreInvento
         //get the invalid char and print error message
         string invalidMedia(1, mediaType);
         getline(ss, movieData1);
-        addError("Invalid  media type: " + invalidMedia + movieData1);
+        addError("Invalid media type: " + invalidMedia + movieData1);
     }
 }
 
@@ -123,5 +123,4 @@ void Return::doReturn(Customer* customer, Movie* movieReturn, Movie* movieCopy)
     {
         addError("Movie does not exist to return: " + movieCopy->getInfo());
     }
-    
 }

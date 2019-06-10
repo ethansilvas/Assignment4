@@ -12,14 +12,14 @@
 #ifndef STORE_H
 #define STORE_H
 
-#include "inventory.h"
+#include "storeinventory.h"
 
 class Store
 {
 public:
     void readData(ifstream& movieData);
 private:
-    Inventory inventory;
+    StoreInventory inventory;
 };
 
 #endif
