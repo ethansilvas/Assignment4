@@ -62,7 +62,7 @@ void Drama::display() const {
 		<< setw(5) << year << endl;
 }//end of display
 
-string Drama::getInfo()
+string Drama::getInfo() const
 {
 	ostringstream ss;
     ss << "Drama: " << director << " " << title << " " << year;

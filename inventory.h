@@ -23,7 +23,7 @@ public:
     void processInventory(ifstream & dataFile);
     void displayInventory();
 
-    Movie* retriveMovie(Movie* movie, const char type);
+    Movie* retrieveMovie(Movie* movie, const char type);
 private:
     BinTree comedyBST;
     BinTree dramaBST;
