@@ -10,7 +10,7 @@ Transaction::~Transaction()
 
 }
 
-void Transaction::processTransaction(const string s, Customer* cust, Inventory* inv, HashTable& customers)
+void Transaction::processTransaction(const string line, Customer* customer, StoreInventory* inventory, HashTable& customers)
 {
 
 }
@@ -20,13 +20,13 @@ string Transaction::getErrors()
     return errors;
 }
 
-bool Transaction::customerValid(Customer* cust, int id)
+bool Transaction::customerValid(Customer* customer, const int id)
 {
-    if (cust == nullptr)
+    if (customer == nullptr)
     {
-        ostringstream stringStream;
-        stringStream << id;
-        addError("Invalid ID: " + stringStream.str());
+        ostringstream ss;
+        ss << id;
+        addError("Invalid ID: " + ss.str());
         return false;
     }
     return true;

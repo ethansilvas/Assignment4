@@ -10,7 +10,7 @@ Borrow::~Borrow()
     
 }
 
-void Borrow::processTransaction(string s, Customer* cust, Inventory* inv, HashTable& ht)
+void Borrow::processTransaction(string s, Customer* cust, StoreInventory* inv, HashTable& ht)
 {
     string tmp;
     int id;
@@ -33,7 +33,7 @@ void Borrow::borrowMovie(Customer*, Movie*, Movie*)
     
 }
 
-void Borrow::readTransaction(string info, Customer* cust, Inventory* inv)
+void Borrow::readTransaction(string info, Customer* cust, StoreInventory* inv)
 {
     stringstream stream;
     char movie, media;
@@ -45,7 +45,7 @@ void Borrow::readTransaction(string info, Customer* cust, Inventory* inv)
     stream << info;
     stream >> media;
 
-    if (media == DVD)
+    if (media == 'D')
     {
         stream >> movie;
         switch (movie)

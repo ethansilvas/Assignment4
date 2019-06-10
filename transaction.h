@@ -2,7 +2,7 @@
 #define TRANSACTION_H
 
 #include "customer.h" 
-#include "inventory.h"
+#include "storeinventory.h"
 #include "hashtable.h"
 
 
@@ -12,10 +12,10 @@ public:
     Transaction();
     virtual ~Transaction();
 
-    virtual void processTransaction(const string line, Customer* cust, Inventory* inv, HashTable& customers);
+    virtual void processTransaction(const string line, Customer* customer, StoreInventory* inventory, HashTable& customers);
     string getErrors();  
 protected:
-    bool customerValid(Customer* cust, const int id);
+    bool customerValid(Customer* customer, const int id);
     string errors;
     void addError(const string error);
 };

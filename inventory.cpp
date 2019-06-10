@@ -1,59 +1,16 @@
 #include "inventory.h"
 
-void Inventory::processInventory(ifstream& dataFile)
+Inventory::Inventory()
 {
-    string line;
-
-    for (;;)
-    {
-        getline(dataFile, line);
-
-        if (dataFile.eof())
-        {
-            break;
-        }
-
-        Movie* current = MovieFactory::createMovie(line);
-
-        switch (line[0])
-        {
-            case 'F':
-                comedyBST.insert(current);
-                break;
-            case 'D':
-                dramaBST.insert(current);
-                break;
-            case 'C':
-                classicBST.insert(current);
-                break;
-            default:
-                break;
-        }
-    }
+    errors = "";
 }
 
-void Inventory::displayInventory()
+Inventory::~Inventory()
 {
-    comedyBST.inorderDisplay();
-    dramaBST.inorderDisplay();
-    classicBST.inorderDisplay();
+
 }
 
-Movie* Inventory::retrieveMovie(Movie* movie, const char type)
-{
-    switch (type)
-    {
-        case 'D':
-            return dramaBST.retrieve(movie);
-            break;
-        case 'F':
-            return comedyBST.retrieve(movie);
-            break;
-        case 'C':
-            return classicBST.retrieve(movie);
-            break;
-        default:
-            break;
-    }
-    return NULL;
-}
+ void Inventory::processTransaction(const string line, Customer* customer, StoreInventory* inventory)
+ {
+     inventory->displayInventory();
+ }
