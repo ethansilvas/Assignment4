@@ -17,6 +17,7 @@ bool borrowMovie(Movie* toBorrow);
 bool returnMovie(Movie* toReturn);
 
 void displayHistory();
+string getCustomerInfo() const;
 bool createCustomer(ifstream& file);
 
 int getID();

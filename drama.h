@@ -25,6 +25,7 @@ public:
 
     //define pure virtuals
     virtual void display() const;
+    virtual string getInfo();
 
     //operator overloads
     virtual bool operator==(const Movie& rhs) const;
