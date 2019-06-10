@@ -91,11 +91,11 @@ Movie* BinTree::retrieveHelper(Node* subTreeRoot, const Movie* nodeToFind) const
     {
         return NULL;
     }
-    else if (nodeToFind == *subTreeRoot->data) 
+    else if (nodeToFind == subTreeRoot->data) 
     {
         return subTreeRoot->data;
     }
-    else if (nodeToFind < *subTreeRoot->data)
+    else if (nodeToFind < subTreeRoot->data)
     {
         return retrieveHelper(subTreeRoot->left, nodeToFind); //, foundNode);
     }
