@@ -61,3 +61,10 @@ void Drama::display() const {
 		 << setw(18) << director << " "
 		<< setw(5) << year << endl;
 }//end of display
+
+string Drama::getInfo()
+{
+	ostringstream ss;
+    ss << "Drama: " << director << " " << title << " " << year;
+    return ss.str();
+}

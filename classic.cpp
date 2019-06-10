@@ -105,3 +105,10 @@ void Classic::display() const {
 		 << setw(5) << year << " "
 		 << majorActor << endl;
 }//end display
+
+string Classic::getInfo() const 
+{
+    ostringstream ss;
+    ss << "Classic: " << month << " " << year << " " << majorActor <<  " " << title << " " << director;
+    return  ss.str();
+}

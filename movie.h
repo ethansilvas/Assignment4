@@ -30,6 +30,7 @@ public:
     
     //pure virtuals
     virtual void display() const = 0;
+    virtual string getInfo() const = 0;
 
     //operator overloads
     virtual bool operator<(const Movie& rhs) const = 0;

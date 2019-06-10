@@ -66,3 +66,10 @@ void Comedy::display() const
 		 << setw(18) << this->director << " "
 		 << setw(5) << this->year << endl;
 } //end of display
+
+string Comedy::getInfo() const
+{
+    ostringstream ss;
+    ss << "Comedy: "<< title << " " << director << " " << year;
+    return ss.str();
+}

@@ -91,6 +91,11 @@ void Customer::displayHistory()
     }
 }
 
+string Customer::getCustomerInfo() const
+{
+    return id + " " + lastName + " " + firstName;
+}
+
 bool Customer::createCustomer(ifstream &infile) 
 {
 
