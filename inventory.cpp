@@ -39,7 +39,7 @@ void Inventory::displayInventory()
     classicBST.inorderDisplay();
 }
 
-Movie* Inventory::retriveMovie(Movie* movie, const char type)
+Movie* Inventory::retrieveMovie(Movie* movie, const char type)
 {
     switch (type)
     {
