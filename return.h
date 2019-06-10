@@ -11,7 +11,6 @@ public:
 
     virtual void processTransaction(const string line, Customer* cust, Inventory* inv, HashTable& customers);
 protected:
-    void 
 };
 
 #endif
