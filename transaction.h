@@ -1,8 +1,6 @@
 #ifndef TRANSACTION_H
 #define TRANSACTION_H
-using namespace std;
-#include <iostream>
-#include <fstream>
+
 #include "customer.h" 
 #include "inventory.h"
 #include "hashtable.h"
@@ -10,19 +8,16 @@ using namespace std;
 
 class Transaction
 {
-    public:
+public:
     Transaction();
     virtual ~Transaction();
-    virtual void processTransaction(string, Customer*, Inventory*, HashTable&);
-    string getErrors();
-    static const char DVD = 'D';
 
-    protected:
-    bool customerValid(Customer*, int);
-    string errors = "";
-    void addError(string);
+    virtual void processTransaction(const string line, Customer* cust, Inventory* inv, HashTable& customers);
+    string getErrors();  
+protected:
+    bool customerValid(Customer* cust, const int id);
+    string errors;
+    void addError(const string error);
 };
-
-
 
 #endif //TRANSACTION_H
