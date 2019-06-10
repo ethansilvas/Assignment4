@@ -19,9 +19,9 @@ class Comedy : public Movie
 public:
     //constructors 
     Comedy();
-    Comedy(const Comedy& other);
+    Comedy(const string& newTitle, const int& newYear);
     Comedy(const string& line);
-    ~Comedy();
+    virtual ~Comedy();
 
     //define pure virtuals
     virtual void display() const;

@@ -16,15 +16,11 @@ Classic::Classic()
 
 } //end default constructor 
 
-Classic::Classic(const Classic& other)
+Classic::Classic(const string& newActor, const int& newMonth, const int& newYear) 
 {
-    this->title = other.title;
-    this->director = other.director;
-    this->year = other.year;
-    this->type = other.type;
-    this->stock = other.stock;
-    this->month = other.month;
-    this->majorActor = other.majorActor;
+    this->majorActor = newActor;
+    this->month = newMonth;
+    this->year = newYear;
 }
 
 Classic::Classic(const string& line) {

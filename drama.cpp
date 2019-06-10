@@ -11,13 +11,15 @@
 
 #include "drama.h"
 
-Drama::Drama(const Drama& other)
+Drama::Drama()
 {
-    this->title = other.title;
-    this->director = other.director;
-    this->year = other.year;
-    this->type = other.type;
-    this->stock = other.stock;
+
+}
+
+Drama::Drama(const string& newTitle, const string& newDirector)
+{
+	this->title = newTitle;
+	this->director = newDirector;
 }
 
 Drama::Drama(const string& line) {

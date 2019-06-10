@@ -18,9 +18,9 @@ class Classic : public Movie
 {
 public:
     Classic();
-	Classic(const Classic& rightSide);
+    Classic(const string& newTitle, const int& newMonth, const int& newYear);
     Classic(const string& line);
-	~Classic();
+	virtual ~Classic();
 
     //define pure virtuals
     virtual void display() const;
@@ -31,6 +31,7 @@ public:
     virtual bool operator>(const Movie& rhs) const;
 
 protected:
+    //redefine for extra data that needs to be read in 
     void parseData(const string& line);
 
 private:

@@ -19,13 +19,10 @@ Comedy::Comedy()
 
 } //end default constructor 
 
-Comedy::Comedy(const Comedy& other)
+Comedy::Comedy(const string& newTitle, const int& newYear)
 {
-    this->title = other.title;
-    this->director = other.director;
-    this->year = other.year;
-    this->type = other.type;
-    this->stock = other.stock;
+    this->title = newTitle;
+    this->year = newYear;
 }
 
 Comedy::Comedy(const string& line) {

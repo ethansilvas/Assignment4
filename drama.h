@@ -19,9 +19,9 @@ class Drama : public Movie
 public:
     //constructors 
     Drama();
-    Drama(const Drama& other);
+    Drama(const string& newTitle, const string& newDirector);
     Drama(const string& line);
-    ~Drama();
+    virtual ~Drama();
 
     //define pure virtuals
     virtual void display() const;
