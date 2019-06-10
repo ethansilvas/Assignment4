@@ -15,13 +15,13 @@ class Borrow : public Transaction
     public:
     Borrow();
     ~Borrow();
-    virtual void processTransaction(string, Customer&, Inventory&);
+    virtual void processTransaction(string, Customer*, Inventory*, HashTable&);
     static const char type = 'B';
 
     protected:
 
     void borrowMovie(Customer*, Movie*, Movie*);
-    void readTransaction(string info, Customer* cust, Inventory& inv);
+    void readTransaction(string info, Customer* cust, Inventory* inv);
 };
 
 #endif //BORROW_H

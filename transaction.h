@@ -5,6 +5,7 @@ using namespace std;
 #include <fstream>
 #include "customer.h" 
 #include "inventory.h"
+#include "hashtable.h"
 
 
 class Transaction
@@ -12,7 +13,7 @@ class Transaction
     public:
     Transaction();
     virtual ~Transaction();
-    virtual void processTransaction(string, Customer&, Inventory&);
+    virtual void processTransaction(string, Customer*, Inventory*, HashTable&);
     string getErrors();
     static const char DVD = 'D';
 
