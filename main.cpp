@@ -32,7 +32,7 @@ int main()
     }
     else
     {
-        //read commands
+        store.readCommands(commands);
     }
 
     ifstream customers("data4customers.txt");

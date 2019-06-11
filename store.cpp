@@ -20,6 +20,6 @@ void Store::readData(ifstream& movieData)
 
 void Store::readCommands(ifstream& commandData)
 {
-    //TODO: pass in commanddata, customer, inventory, hashtable
+    //TODO: pass in Customer
     commands.readCommands(commandData, customer, inv, customers);
 }
