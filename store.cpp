@@ -11,15 +11,14 @@
 
 #include "store.h"
 
-
-void Store::readData(ifstream& movieData)
+void Store::readData(ifstream& movieData, ifstream& customerData)
 {
-    inventory.processInventory(movieData);
-    inventory.displayInventory();
+    inventory->processInventory(movieData);
+    //inventory->displayInventory();
+    customer->createCustomer(customerData);
 }
 
 void Store::readCommands(ifstream& commandData)
 {
-    //TODO: pass in Customer
-    commands.readCommands(commandData, customer, inv, customers);
+    commandReader->readCommands(commandData, customer, inventory, customers);
 }
