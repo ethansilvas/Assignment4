@@ -26,7 +26,7 @@ bool Transaction::customerValid(Customer* customer, const int id)
     {
         ostringstream ss;
         ss << id;
-        addError("Invalid ID: " + ss.str());
+        addError("Invalid Customer ID: " + ss.str());
         return false;
     }
     return true;
@@ -34,5 +34,5 @@ bool Transaction::customerValid(Customer* customer, const int id)
 
 void Transaction::addError(const string err)
 {
-    errors = err + "\n";
+    errors = "ERROR: "+  err + "\n";
 }

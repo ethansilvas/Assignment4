@@ -84,7 +84,13 @@ void Customer::displayHistory()
 {
     historyNode* current = historyHead;
 
-    cout << this->firstName << " " << this->lastName << endl;
+    cout << "Customer: " << id << " " << this->lastName << ", " << this->firstName  << endl; //
+
+    if (current == nullptr) //Verify if logic correct
+    {
+        cout << "No transactions found" << endl;
+        return;
+    }
 
     while (current != NULL)
     {
@@ -101,6 +107,7 @@ void Customer::displayHistory()
 
         current = current->next;
     }
+    
 }
 
 string Customer::getCustomerInfo() const

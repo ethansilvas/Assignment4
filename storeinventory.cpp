@@ -34,10 +34,19 @@ void StoreInventory::processInventory(ifstream& dataFile)
     }
 }
 
-void StoreInventory::displayInventory()
+void StoreInventory::displayInventory() //
 {
+    cout << "--------------------------------------------------------------" << endl <<
+		"IN TITLE                             DIRECTOR              YEAR" << endl <<
+		"---------------------------------------------------------------------" << endl;
     comedyBST.inorderDisplay();
+    cout << "--------------------------------------------------------------" << endl <<
+		"IN TITLE                             DIRECTOR              YEAR" << endl <<
+		"---------------------------------------------------------------------" << endl;
     dramaBST.inorderDisplay();
+    cout << "--------------------------------------------------------------" << endl <<
+		"IN TITLE                          DIRECTOR          MO  YEAR  ACTOR" << endl <<
+		"---------------------------------------------------------------------" << endl;
     classicBST.inorderDisplay();
 }
 
@@ -65,6 +74,7 @@ void StoreInventory::addError(const string error)
     errorCount++;
     ostringstream temp;
     temp << errorCount;
+    errors += "ERROR: "; //
     errors += temp.str() + ") ";
     errors += error;
     errors += "\n";

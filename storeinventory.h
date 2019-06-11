@@ -16,6 +16,7 @@
 #include "moviefactory.h"
 #include "movie.h"
 #include <fstream>
+#include <iomanip>
 
 class StoreInventory
 {

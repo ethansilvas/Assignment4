@@ -188,7 +188,7 @@ void BinTree::inorderHelper(Node* subTreeRoot) const
     if (subTreeRoot != NULL)
     {
         inorderHelper(subTreeRoot->left);
-        cout << subTreeRoot->data->getStock();
+        cout << setw(2) << subTreeRoot->data->getStock(); //setw 2
         subTreeRoot->data->display();
         inorderHelper(subTreeRoot->right);
     }

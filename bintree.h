@@ -19,6 +19,7 @@
 #define BINTREE_H
 
 #include "movie.h"
+#include <iomanip>
 
 class BinTree
 {

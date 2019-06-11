@@ -124,6 +124,6 @@ void Return::doReturn(Customer* customer, Movie* movieReturn, Movie* movieCopy)
     }
     else
     {
-        addError("Movie does not exist to return: " + movieCopy->getInfo());
+        addError("Movie does not exist to return: " + movieCopy->getInfo()); //
     }
 }

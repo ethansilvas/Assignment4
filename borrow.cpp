@@ -120,8 +120,12 @@ void Borrow::doBorrow(Customer* customer, Movie* movieBorrow, Movie* movieCopy)
     {
         bool validBorrow = customer->borrowMovie(movieBorrow);
 
-        if (!validBorrow)
+        if (!validBorrow) //Cannot fix, cust info does not print
+                            //when I remove "\n"
         {
+            // cout << "custinfo" << customer->getCustomerInfo() << endl;
+            // string temp = customer->getCustomerInfo() + ": " + "Invalid borrow: " + movieBorrow->getInfo();
+            // addError(temp);
             addError(customer->getCustomerInfo() + "\n" + "Invalid borrow: " + movieBorrow->getInfo());
         }
     }
