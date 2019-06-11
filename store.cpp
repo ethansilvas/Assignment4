@@ -14,7 +14,6 @@
 void Store::readData(ifstream& movieData, ifstream& customerData)
 {
     inventory.processInventory(movieData);
-    inventory.displayInventory();
     customerCreator.createCustomer(customerData);
 }
 

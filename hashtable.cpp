@@ -106,6 +106,23 @@ Customer* HashTable::getCustomer(const int key)
     return NULL;
 }
 
+void HashTable::print()
+{
+    for (int i = 0; i < HASH; i++)
+    {
+        if (table[i].head != NULL)
+        {
+            HashList* current = table[i].head;
+            
+            while (current != NULL)
+            {
+                cout << current->value->getCustomerInfo() << endl;
+                current = current->next;
+            }
+        }
+    }
+}
+
 /* 
 void HashTable::insertCustomers(ifstream& file)
 {

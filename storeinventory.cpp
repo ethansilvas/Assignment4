@@ -2,6 +2,7 @@
 
 void StoreInventory::processInventory(ifstream& dataFile)
 {
+    errorCount = 0;
     string line;
 
     for (;;)
@@ -27,6 +28,7 @@ void StoreInventory::processInventory(ifstream& dataFile)
                 classicBST.insert(current);
                 break;
             default:
+                addError(line);
                 break;
         }
     }
@@ -37,6 +39,7 @@ void StoreInventory::displayInventory()
     comedyBST.inorderDisplay();
     dramaBST.inorderDisplay();
     classicBST.inorderDisplay();
+    displayErrors();
 }
 
 Movie* StoreInventory::retrieveMovie(Movie* movie, const char type)
@@ -56,4 +59,19 @@ Movie* StoreInventory::retrieveMovie(Movie* movie, const char type)
             break;
     }
     return NULL;
+}
+
+void StoreInventory::addError(const string error)
+{
+    errorCount++;
+    ostringstream temp;
+    temp << errorCount;
+    errors += temp.str() + ") ";
+    errors += error;
+    errors += "\n";
+} 
+
+void StoreInventory::displayErrors() const
+{
+    cout << errors;
 }

@@ -25,6 +25,12 @@ public:
 
     Movie* retrieveMovie(Movie* movie, const char type);
 private:
+    int errorCount;
+    string errors;
+
+    void addError(const string error); 
+    void displayErrors() const;
+
     BinTree comedyBST;
     BinTree dramaBST;
     BinTree classicBST;

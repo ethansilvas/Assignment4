@@ -75,7 +75,7 @@ void BinTree::deleteTree(Node* subTreeRoot)
 // returns the item in the foundNode Movie
 // returns true if an item is found
 // -----------------------------------------------------------------------------
-Movie* BinTree::retrieve(const Movie* nodeToFind) const //, Movie* &foundNode) const
+Movie* BinTree::retrieve(const Movie* nodeToFind) //, Movie* &foundNode) const
 {
     return retrieveHelper(this->root, nodeToFind); //, foundNode);
 } //end of retrieve
@@ -84,18 +84,19 @@ Movie* BinTree::retrieve(const Movie* nodeToFind) const //, Movie* &foundNode) c
 // recurs through the tree to find a given node 
 // returns true if item is found and returns item through foundNode
 // -----------------------------------------------------------------------------
-Movie* BinTree::retrieveHelper(Node* subTreeRoot, const Movie* nodeToFind) const //, Movie* &foundNode) const
+Movie* BinTree::retrieveHelper(Node*& subTreeRoot, const Movie* nodeToFind) //, Movie* &foundNode) const
 {
     //recur through left and right until it is found, or a null node is hit
     if (subTreeRoot == NULL)
     {
+        cout << "HELLO " << endl;
         return NULL;
     }
-    else if (nodeToFind == subTreeRoot->data) 
+    else if (*nodeToFind == *subTreeRoot->data) 
     {
         return subTreeRoot->data;
     }
-    else if (nodeToFind < subTreeRoot->data)
+    else if (*nodeToFind < *subTreeRoot->data)
     {
         return retrieveHelper(subTreeRoot->left, nodeToFind); //, foundNode);
     }

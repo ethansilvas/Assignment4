@@ -34,7 +34,8 @@ Comedy::~Comedy()
     
 }
 
-bool Comedy::operator==(const Movie& movie) const {
+bool Comedy::operator==(const Movie& movie) const 
+{
 	const Comedy& comedyCast = static_cast<const Comedy&>(movie);
 	return (title == comedyCast.title && year == comedyCast.year);
 }//end of ==
@@ -62,8 +63,8 @@ bool Comedy::operator>(const Movie& movie) const {
 
 void Comedy::display() const
 {
-    cout << left << setw(22) << this->title << " "
-		 << setw(18) << this->director << " "
+    cout << stock << left << setw(33) << this->title << " "
+		 << setw(22) << this->director << " "
 		 << setw(5) << this->year << endl;
 } //end of display
 
