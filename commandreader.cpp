@@ -41,7 +41,7 @@ void CommandReader::readCommands(ifstream& file, CustomerCreator& customerCreato
             default:
                 getline(file, line);
                 string invalid(1, type);
-                errors += "* Invalid transaction type: " + invalid + "\n";
+                errors += "Invalid transaction type: " + invalid + "\n";
                 break;
         }
     }

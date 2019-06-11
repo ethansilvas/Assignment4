@@ -34,5 +34,5 @@ bool Transaction::customerValid(Customer* customer, const int id)
 
 void Transaction::addError(const string err)
 {
-    errors = "* " + err + "\n";
+    errors = err + "\n";
 }
