@@ -24,5 +24,6 @@ void History::processTransaction(const string line, CustomerCreator& customerCre
     if (customerValid(customerToFind, customerID))
     {
         customerToFind->displayHistory();
+        cout << endl;
     }
 }
