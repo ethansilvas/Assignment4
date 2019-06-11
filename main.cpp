@@ -27,7 +27,6 @@ int main()
         store.readData(movies, customers);
     }
     
-
     ifstream commands("data4commands.txt");
     if (!commands)
     {

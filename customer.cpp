@@ -3,6 +3,16 @@
 Customer::Customer() 
 {
     historyHead = NULL;
+    transactionHead = NULL;
+}
+
+Customer::Customer(const int id, const string last, const string first) 
+{
+    this->id = id;
+    this->firstName = first;
+    this->lastName = last;
+    historyHead = NULL;
+    transactionHead = NULL;
 }
 
 Customer::~Customer()
@@ -94,36 +104,6 @@ void Customer::displayHistory()
 string Customer::getCustomerInfo() const
 {
     return id + " " + lastName + " " + firstName;
-}
-
-bool Customer::createCustomer(ifstream &infile) 
-{
-
-    //read in the customer's ID
-    infile >> this->id;
-
-    if(this->id >= 0){
-
-        //read in the customer's last name followed by their first name
-        infile >> this->lastName;
-        infile >> this->firstName;
-
-        //return true to indicate that all fields were successfully populated
-        return true;
-
-    }
-    else
-    {
-
-        //print an error, since we received an invalid ID
-        cout << "ERROR: " << this->id
-             << " is not a valid customer ID." << endl;
-
-        //return false to indicate that the data given to populate the
-        // Customer was not valid
-        return false;
-
-    }
 }
 
 bool Customer::addBorrow(Movie* borrowed)

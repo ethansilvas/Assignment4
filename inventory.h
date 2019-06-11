@@ -9,7 +9,7 @@ public:
     Inventory();
     ~Inventory();
 
-    virtual void processTransaction(const string line, Customer* customer, StoreInventory* inventory, HashTable& customers);
+    virtual void processTransaction(const string line, CustomerCreator& CustomerCreator, StoreInventory& inventory);
 };
 
 #endif

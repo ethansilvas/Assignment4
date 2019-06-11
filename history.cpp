@@ -10,7 +10,7 @@ History::~History()
 
 }
 
-void History::processTransaction(const string line, Customer* customer, StoreInventory* inventory, HashTable& customers)
+void History::processTransaction(const string line, CustomerCreator& customerCreator, StoreInventory& inventory)
 {
     int customerID; 
     Customer* customerToFind = NULL;
@@ -19,7 +19,7 @@ void History::processTransaction(const string line, Customer* customer, StoreInv
     ss << line;
 
     ss >> customerID;
-    customerToFind = customers.getCustomer(customerID);
+    customerToFind = customerCreator.getCustomer(customerID);
 
     if (customerValid(customerToFind, customerID))
     {

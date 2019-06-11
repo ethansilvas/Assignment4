@@ -9,7 +9,7 @@ public:
     History();
     ~History();
 
-    virtual void processTransaction(const string line, Customer* customer, StoreInventory* inventory, HashTable& customers);
+    virtual void processTransaction(const string line, CustomerCreator& customerCreator, StoreInventory& inventory);
 };
 
 #endif
