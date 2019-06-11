@@ -10,7 +10,7 @@ Borrow::~Borrow()
     
 }
 
-void Borrow::processTransaction(string s, Customer* cust, Inventory* inv, HashTable& ht)
+void Borrow::processTransaction(string s, Customer* cust, Inventory* inv, HashTable& customers)
 {
     string tmp;
     int id;
@@ -45,7 +45,7 @@ void Borrow::readTransaction(string info, Customer* cust, Inventory* inv)
     stream << info;
     stream >> media;
 
-    if (media == DVD)
+    if (media == 'D')
     {
         stream >> movie;
         switch (movie)
@@ -62,8 +62,8 @@ void Borrow::readTransaction(string info, Customer* cust, Inventory* inv)
                 stream >> tmp1;
                 majorActor += tmp1;
 
-                //tempMovie = new Classic(majorActor, month, year); //Add constructor
-                //custMovie = 
+                tempMovie = new Classic(majorActor, month, year); //Add constructor
+                custMovie = 
 
         }
     }

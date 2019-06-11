@@ -11,7 +11,7 @@ class Transaction
 public:
     Transaction();
     virtual ~Transaction();
-
+    
     virtual void processTransaction(const string line, Customer* cust, Inventory* inv, HashTable& customers);
     string getErrors();  
 protected:
