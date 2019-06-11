@@ -53,7 +53,6 @@ void Borrow::readTransaction(const string line, Customer* customer, StoreInvento
                 //read title and year
                 getline(ss, movieData2, ',');
                 getline(ss, movieData1);
-                
                 //hold the year and make a new comedy with it
                 stringstream(movieData1) >> year;
                 movieCopy = new Comedy(movieData2, year);
@@ -88,6 +87,9 @@ void Borrow::readTransaction(const string line, Customer* customer, StoreInvento
 
                 ss >> movieData1;
                 majorActor += movieData1;
+                majorActor += ' ';
+                ss >> movieData1;
+                majorActor += movieData1;
 
                 movieCopy = new Classic(majorActor, month, year);
                 customerMovie = inventory.retrieveMovie(movieCopy, movieType);
@@ -116,10 +118,11 @@ void Borrow::doBorrow(Customer* customer, Movie* movieBorrow, Movie* movieCopy)
 {
     if (movieBorrow != NULL)
     {
-        bool validBorrow = customer->returnMovie(movieBorrow);
+        bool validBorrow = customer->borrowMovie(movieBorrow);
+
         if (!validBorrow)
         {
-            addError(customer->getCustomerInfo() + "/n" + "Invalid borrow: " + movieBorrow->getInfo());
+            addError(customer->getCustomerInfo() + "\n" + "Invalid borrow: " + movieBorrow->getInfo());
         }
     }
     else

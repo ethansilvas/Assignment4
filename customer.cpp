@@ -98,12 +98,16 @@ void Customer::displayHistory()
             cout << "Return: ";
             current->movieData->display();
         } 
+
+        current = current->next;
     }
 }
 
 string Customer::getCustomerInfo() const
 {
-    return id + " " + lastName + " " + firstName;
+    ostringstream stringStream;
+    stringStream << "Customer ID " << id << ": " << lastName << " " << firstName;
+    return  stringStream.str();
 }
 
 bool Customer::addBorrow(Movie* borrowed)

@@ -85,6 +85,9 @@ void Return::readTransaction(const string line, Customer* customer, StoreInvento
 
                 ss >> movieData1;
                 majorActor += movieData1;
+                majorActor += ' ';
+                ss >> movieData1;
+                majorActor += movieData1;
 
                 movieCopy = new Classic(majorActor, month, year);
                 customerMovie = inventory.retrieveMovie(movieCopy, movieType);

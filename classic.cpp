@@ -51,14 +51,16 @@ void Classic::parseData(const string& line) {
     ss >> year;                 // add month
 }
 
- bool Classic::operator==(const Movie& movie) const{
+ bool Classic::operator==(const Movie& movie) const 
+ {
 	const Classic& classicCast = static_cast<const Classic&>(movie);
 
 	return (year == classicCast.year && month == classicCast.month
-		&& this->majorActor == classicCast.majorActor);
+		&& majorActor == classicCast.majorActor);
 }//end of ==
 
-bool Classic::operator<(const Movie& movie) const {
+bool Classic::operator<(const Movie& movie) const 
+{
 	const Classic& classicCast = static_cast<const Classic&>(movie);
 
 	if (this->year < classicCast.year)
@@ -93,13 +95,15 @@ bool Classic::operator<(const Movie& movie) const {
     }
 }//end of <
 
-bool Classic::operator>(const Movie& movie) const {
+bool Classic::operator>(const Movie& movie) const 
+{
 	return !(*this < movie);
 }//end of <
 
-void Classic::display() const {
+void Classic::display() const 
+{
 	
-	cout << left << setw(22) << title << " "
+	cout << stock << left << setw(30) << title << " "
 		 << setw(18) << director << " "
 		 << setw(3) << month << " "
 		 << setw(5) << year << " "

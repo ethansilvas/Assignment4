@@ -36,6 +36,14 @@ int main()
     {
         store.readCommands(commands);   
     }
+/* 
+    string fuck = "fuck";
+    int asd = 1;
+    Comedy* a = new Comedy(fuck, asd);
+    Comedy* b = new Comedy(fuck, asd);
+
+    cout << "HELLO" << (*a == *b) << endl;
+    */
 
     return 0;
 }

@@ -27,7 +27,14 @@ public:
     virtual bool increaseStock(int); 
     virtual bool decreaseStock(); 
     virtual int getStock(); 
-    
+
+    //accessors
+    /* 
+    string getDirector() const;
+    string getTitle() const;
+    int getYear() const;
+    */
+
     //pure virtuals
     virtual void display() const = 0;
     virtual string getInfo() const = 0;

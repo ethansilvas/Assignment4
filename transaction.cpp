@@ -32,7 +32,7 @@ bool Transaction::customerValid(Customer* customer, const int id)
     return true;
 }
 
-void Transaction::addError(string err)
+void Transaction::addError(const string err)
 {
     errors = "* " + err + "\n";
 }
