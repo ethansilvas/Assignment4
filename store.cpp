@@ -11,8 +11,15 @@
 
 #include "store.h"
 
+
 void Store::readData(ifstream& movieData)
 {
     inventory.processInventory(movieData);
     inventory.displayInventory();
+}
+
+void Store::readCommands(ifstream& commandData)
+{
+    //TODO: pass in Customer
+    commands.readCommands(commandData, customer, inv, customers);
 }

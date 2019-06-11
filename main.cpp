@@ -25,5 +25,25 @@ int main()
         store.readData(movies);
     }
 
+    ifstream commands("data4commands.txt");
+    if (!commands)
+    {
+        cout << "File not found" << endl;
+    }
+    else
+    {
+        store.readCommands(commands);
+    }
+
+    ifstream customers("data4customers.txt");
+    if (!customers)
+    {
+        cout << "File not found" << endl;
+    }
+    else
+    {
+        //read customers
+    }
+
     return 0;
 }
