@@ -7,7 +7,7 @@ Return::Return()
 
 Return::~Return() {}
 
-void Return::processTransaction(const string line, Customer* customer, StoreInventory* inventory, HashTable& customers)
+void Return::processTransaction(const string line, CustomerCreator& customerCreator, StoreInventory& inventory)
 {
     string currentLine;
     int newID;
@@ -17,7 +17,7 @@ void Return::processTransaction(const string line, Customer* customer, StoreInve
     ss << line;
 
     ss >> newID;
-    newCustomer = customers.getCustomer(newID);
+    newCustomer = customerCreator.getCustomer(newID);
 
     if (customerValid(newCustomer, newID))
     {
@@ -26,7 +26,7 @@ void Return::processTransaction(const string line, Customer* customer, StoreInve
     }
 }
 
-void Return::readTransaction(const string line, Customer* customer, StoreInventory* inventory)
+void Return::readTransaction(const string line, Customer* customer, StoreInventory& inventory)
 {
     stringstream ss;
     ss << line;
@@ -56,7 +56,7 @@ void Return::readTransaction(const string line, Customer* customer, StoreInvento
                 movieCopy = new Comedy(movieData2, year);
 
                 //get movie and try to return 
-                customerMovie = inventory->retrieveMovie(movieCopy, movieType);
+                customerMovie = inventory.retrieveMovie(movieCopy, movieType);
                 doReturn(customer, customerMovie, movieCopy);
                 delete movieCopy;
                 movieCopy = NULL;
@@ -68,7 +68,7 @@ void Return::readTransaction(const string line, Customer* customer, StoreInvento
 
                 //create copy and attempt return
                 movieCopy = new Drama(movieData1, movieData2);
-                customerMovie = inventory->retrieveMovie(movieCopy, movieType);
+                customerMovie = inventory.retrieveMovie(movieCopy, movieType);
                 doReturn(customer, customerMovie, movieCopy);
                 delete movieCopy;
                 movieCopy = NULL;
@@ -87,7 +87,7 @@ void Return::readTransaction(const string line, Customer* customer, StoreInvento
                 majorActor += movieData1;
 
                 movieCopy = new Classic(majorActor, month, year);
-                customerMovie = inventory->retrieveMovie(movieCopy, movieType);
+                customerMovie = inventory.retrieveMovie(movieCopy, movieType);
                 doReturn(customer, customerMovie, movieCopy);
                 delete movieCopy;
                 movieCopy = NULL;

@@ -1,19 +1,18 @@
 #ifndef BORROW_H
 #define BORROW_H
 
-#include "customer.h"
+#include "customercreator.h"
 #include "storeinventory.h"
 #include "transaction.h"
-#include "hashtable.h"
 
 class Borrow : public Transaction
 {
 public:
     Borrow();
     ~Borrow();
-    virtual void processTransaction(const string line, Customer* customer, StoreInventory* inventory, HashTable& customers);
+    virtual void processTransaction(const string line, CustomerCreator& customer, StoreInventory& inventory);
 protected:
-    void readTransaction(const string info, Customer* customer, StoreInventory* inventory);
+    void readTransaction(const string info, Customer* customer, StoreInventory& inventory);
     void doBorrow(Customer* customer, Movie* movieBorrow, Movie* movieCopy);
 };
 

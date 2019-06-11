@@ -10,6 +10,7 @@ class Customer
 public:
 
 Customer();
+Customer(const int id, const string last, const string first);
 ~Customer();
 
 bool addTransaction(const char type, Movie* movie);
@@ -18,7 +19,6 @@ bool returnMovie(Movie* toReturn);
 
 void displayHistory();
 string getCustomerInfo() const;
-bool createCustomer(ifstream& file);
 
 int getID();
 

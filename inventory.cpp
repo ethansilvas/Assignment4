@@ -10,7 +10,7 @@ Inventory::~Inventory()
 
 }
 
-void Inventory::processTransaction(const string line, Customer* customer, StoreInventory* inventory, HashTable& customers)
+void Inventory::processTransaction(const string line, CustomerCreator& customerCreator, StoreInventory& inventory)
 {
-    inventory->displayInventory();
+    inventory.displayInventory();
 }

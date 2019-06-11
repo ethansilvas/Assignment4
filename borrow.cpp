@@ -10,7 +10,7 @@ Borrow::~Borrow()
     
 }
 
-void Borrow::processTransaction(const string line, Customer* customer, StoreInventory* inventory, HashTable& customers)
+void Borrow::processTransaction(const string line, CustomerCreator& customerCreator, StoreInventory& inventory)
 {
     string currentLine;
     int id;
@@ -20,7 +20,7 @@ void Borrow::processTransaction(const string line, Customer* customer, StoreInve
     stream << line;
 
     stream >> id;
-    newCustomer = customers.getCustomer(id);
+    newCustomer = customerCreator.getCustomer(id);
 
     if (customerValid(newCustomer, id))
     {
@@ -29,7 +29,7 @@ void Borrow::processTransaction(const string line, Customer* customer, StoreInve
     }
 }
 
-void Borrow::readTransaction(const string line, Customer* customer, StoreInventory* inventory)
+void Borrow::readTransaction(const string line, Customer* customer, StoreInventory& inventory)
 {
     stringstream ss;
     ss << line;
@@ -59,7 +59,7 @@ void Borrow::readTransaction(const string line, Customer* customer, StoreInvento
                 movieCopy = new Comedy(movieData2, year);
 
                 //get movie and try to return 
-                customerMovie = inventory->retrieveMovie(movieCopy, movieType);
+                customerMovie = inventory.retrieveMovie(movieCopy, movieType);
                 doBorrow(customer, customerMovie, movieCopy);
                 delete movieCopy;
                 movieCopy = NULL;
@@ -71,7 +71,7 @@ void Borrow::readTransaction(const string line, Customer* customer, StoreInvento
 
                 //create copy and attempt return
                 movieCopy = new Drama(movieData1, movieData2);
-                customerMovie = inventory->retrieveMovie(movieCopy, movieType);
+                customerMovie = inventory.retrieveMovie(movieCopy, movieType);
                 doBorrow(customer, customerMovie, movieCopy);
                 delete movieCopy;
                 movieCopy = NULL;
@@ -90,7 +90,7 @@ void Borrow::readTransaction(const string line, Customer* customer, StoreInvento
                 majorActor += movieData1;
 
                 movieCopy = new Classic(majorActor, month, year);
-                customerMovie = inventory->retrieveMovie(movieCopy, movieType);
+                customerMovie = inventory.retrieveMovie(movieCopy, movieType);
                 doBorrow(customer, customerMovie, movieCopy);
                 delete movieCopy;
                 movieCopy = NULL;

@@ -106,6 +106,7 @@ Customer* HashTable::getCustomer(const int key)
     return NULL;
 }
 
+/* 
 void HashTable::insertCustomers(ifstream& file)
 {
     //while the file has data to read
@@ -115,7 +116,7 @@ void HashTable::insertCustomers(ifstream& file)
         Customer* temp = new Customer;
 
         //if we are able to create a new Customer, aka all the data is correct
-        if(temp->createCustomer(file)){
+        if (temp->createCustomer(file)){
             if(!file.eof()) {
 
                 this->putCustomer(temp->getID(), temp);
@@ -131,3 +132,4 @@ void HashTable::insertCustomers(ifstream& file)
         }
     }
 }
+*/

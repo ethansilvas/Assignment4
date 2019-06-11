@@ -1,7 +1,7 @@
 #ifndef COMMANDREADER_H
 #define COMMANDREADER_H
 
-#include "customer.h"
+#include "customercreator.h"
 #include "inventory.h"
 #include "transactionfactory.h"
 
@@ -11,7 +11,7 @@ public:
     CommandReader();
     ~CommandReader();
 
-    void readCommands(ifstream& file, Customer* customer, StoreInventory* inventory, HashTable& customers);
+    void readCommands(ifstream& file, CustomerCreator& customerCreator, StoreInventory& inventory);
     void displayErrors() const;
 private:
     string errors;

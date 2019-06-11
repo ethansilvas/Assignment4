@@ -13,12 +13,12 @@
 
 void Store::readData(ifstream& movieData, ifstream& customerData)
 {
-    inventory->processInventory(movieData);
-    //inventory->displayInventory();
-    customer->createCustomer(customerData);
+    inventory.processInventory(movieData);
+    inventory.displayInventory();
+    customerCreator.createCustomer(customerData);
 }
 
 void Store::readCommands(ifstream& commandData)
 {
-    commandReader->readCommands(commandData, customer, inventory, customers);
+    commandReader.readCommands(commandData, customerCreator, inventory);
 }

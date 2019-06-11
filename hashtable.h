@@ -13,7 +13,7 @@ public:
     Customer* getCustomer(int);
     bool putCustomer(const int, Customer* newCustomer);
 
-    void insertCustomers(ifstream& file);
+    //void insertCustomers(ifstream& file);
 private:
     //implementing open hashing, use 97 as B and hash value 
     //largest prime number to 100, will hold all possible remainders

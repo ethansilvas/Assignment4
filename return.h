@@ -9,9 +9,9 @@ public:
     Return();
     ~Return();
 
-    virtual void processTransaction(const string line, Customer* customer, StoreInventory* inventory, HashTable& customers);
+    virtual void processTransaction(const string line, CustomerCreator& customerCreator, StoreInventory& inventory);
 protected:
-    void readTransaction(const string info, Customer* customer, StoreInventory* inventory);
+    void readTransaction(const string info, Customer* customer, StoreInventory& inventory);
     void doReturn(Customer* customer, Movie* movieReturn, Movie* movieCopy);
 };
 

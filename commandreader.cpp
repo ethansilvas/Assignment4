@@ -1,6 +1,16 @@
 #include "commandreader.h"
 
-void CommandReader::readCommands(ifstream& file, Customer* customer, StoreInventory* inventory, HashTable& customers)
+CommandReader::CommandReader()
+{
+
+}
+
+CommandReader::~CommandReader()
+{
+
+}
+
+void CommandReader::readCommands(ifstream& file, CustomerCreator& customerCreator, StoreInventory& inventory)
 {
     string line;
     Transaction* transaction = NULL;
@@ -23,7 +33,7 @@ void CommandReader::readCommands(ifstream& file, Customer* customer, StoreInvent
             case 'I':
             case 'H':
                 getline(file, line);
-                transaction->processTransaction(line, customer, inventory, customers);
+                transaction->processTransaction(line, customerCreator, inventory);
                 errors += transaction->getErrors();
                 delete transaction;
                 transaction = NULL;

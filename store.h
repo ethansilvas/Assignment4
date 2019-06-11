@@ -14,7 +14,7 @@
 
 #include "storeinventory.h"
 #include "commandreader.h"
-#include "customer.h"
+#include "customercreator.h"
 #include "hashtable.h"
 
 
@@ -24,10 +24,9 @@ public:
     void readData(ifstream& movieData, ifstream& customerData);
     void readCommands(ifstream& commandData);
 private:
-    StoreInventory* inventory;
-    CommandReader* commandReader;
-    Customer* customer;
-    HashTable customers;
+    StoreInventory inventory;
+    CommandReader commandReader;
+    CustomerCreator customerCreator;
 };
 
 #endif
