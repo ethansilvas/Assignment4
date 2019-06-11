@@ -73,20 +73,3 @@ bool Movie::decreaseStock() {
 int Movie::getStock() {
     return stock;
 }
-
-/* 
-string Movie::getDirector() const
-{
-    return this->director;
-}
-
-string Movie::getTitle() const
-{
-    return this->title;
-}
-
-int Movie::getYear() const
-{
-    return this->year;
-}
-*/

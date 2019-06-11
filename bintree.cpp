@@ -89,7 +89,6 @@ Movie* BinTree::retrieveHelper(Node*& subTreeRoot, const Movie* nodeToFind) //, 
     //recur through left and right until it is found, or a null node is hit
     if (subTreeRoot == NULL)
     {
-        cout << "HELLO " << endl;
         return NULL;
     }
     else if (*nodeToFind == *subTreeRoot->data) 
@@ -189,6 +188,7 @@ void BinTree::inorderHelper(Node* subTreeRoot) const
     if (subTreeRoot != NULL)
     {
         inorderHelper(subTreeRoot->left);
+        cout << subTreeRoot->data->getStock();
         subTreeRoot->data->display();
         inorderHelper(subTreeRoot->right);
     }

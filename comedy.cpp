@@ -63,9 +63,8 @@ bool Comedy::operator>(const Movie& movie) const {
 
 void Comedy::display() const
 {
-    cout << stock << left << setw(33) << this->title << " "
-		 << setw(22) << this->director << " "
-		 << setw(5) << this->year << endl;
+    cout << left << setw(33) << this->title << " "
+		 << setw(22) << this->director << " " << setw(5) << this->year << endl;
 } //end of display
 
 string Comedy::getInfo() const

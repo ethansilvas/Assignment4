@@ -39,7 +39,6 @@ void StoreInventory::displayInventory()
     comedyBST.inorderDisplay();
     dramaBST.inorderDisplay();
     classicBST.inorderDisplay();
-    displayErrors();
 }
 
 Movie* StoreInventory::retrieveMovie(Movie* movie, const char type)

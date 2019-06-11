@@ -61,9 +61,8 @@ bool Drama::operator>(const Movie& movie) const
 
 void Drama::display() const 
 { 
-	cout << left << setw(35) << title << " "
-		 << setw(22) << director << " "
-		<< setw(5) << year << endl;
+	cout << left << setw(33) << title << " " 
+		<< setw(22) << director << " " << setw(5) << year << endl;
 }//end of display
 
 string Drama::getInfo() const

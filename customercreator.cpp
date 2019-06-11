@@ -32,7 +32,6 @@ void CustomerCreator::createCustomer(ifstream& file) {
             delete newCustomer;
         }
     }
-    customers.print();
 }
 
 Customer* CustomerCreator::getCustomer(const int id) 

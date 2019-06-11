@@ -103,11 +103,9 @@ bool Classic::operator>(const Movie& movie) const
 void Classic::display() const 
 {
 	
-	cout << stock << left << setw(30) << title << " "
-		 << setw(18) << director << " "
-		 << setw(3) << month << " "
-		 << setw(5) << year << " "
-		 << majorActor << endl;
+	cout << left << setw(30) << title << " "
+		 << setw(18) << director << " " << setw(3) << month << " "
+		 << setw(5) << year << " " << majorActor << endl;
 }//end display
 
 string Classic::getInfo() const 
