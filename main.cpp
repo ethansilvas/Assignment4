@@ -15,15 +15,18 @@ int main()
 {
     Store store;
 
+    ifstream customers("data4customers.txt");
     ifstream movies("data4movies.txt");
-    if (!movies)
+
+    if (!movies || !customers)
     {
         cout << "File not found" << endl;
     }
     else
     {
-        store.readData(movies);
+        store.readData(movies, customers);
     }
+    
 
     ifstream commands("data4commands.txt");
     if (!commands)
@@ -32,17 +35,7 @@ int main()
     }
     else
     {
-        store.readCommands(commands);
-    }
-
-    ifstream customers("data4customers.txt");
-    if (!customers)
-    {
-        cout << "File not found" << endl;
-    }
-    else
-    {
-        //read customers
+        store.readCommands(commands);   
     }
 
     return 0;

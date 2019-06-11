@@ -21,15 +21,13 @@
 class Store
 {
 public:
-    void readData(ifstream& movieData);
+    void readData(ifstream& movieData, ifstream& customerData);
     void readCommands(ifstream& commandData);
 private:
-    StoreInventory inventory;
-    StoreInventory* inv = &inventory; //Pointer or reference?
-    //Necessary?
-    CommandReader commands;
+    StoreInventory* inventory;
+    CommandReader* commandReader;
+    Customer* customer;
     HashTable customers;
-    //Todo: add customer/customer manager to pass into commandreader
 };
 
 #endif
