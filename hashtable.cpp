@@ -5,6 +5,7 @@
 //------------------------------------------------------------------------------
 // Purpose - Contains implementation for a HashTable designed to store customers
 // by hashing their ID as the key. 
+// Implements open hashing with linked lists
 // -----------------------------------------------------------------------------
 // Assumptions: The customer ID is between Positive and less than 10000. 
 // -----------------------------------------------------------------------------
@@ -23,7 +24,7 @@ HashTable::HashTable()
 
 /**
  * @brief  Helper method for no arg constructor, fills all values with NULL
- * @note   
+ * @note   Initiates the head of each linked list
  * @retval None
  */
 void HashTable::buildTable()
@@ -71,7 +72,7 @@ void HashTable::deleteTable()
 
 /**
  * @brief  Method to insert customer into HashTable
- * @note   
+ * @note   Keys are assumed to be 1000 < x < 9999
  * @param  key: Key to be used for insert (Customer ID)
  * @param  newCustomer: Customer to be added
  * @retval True if successful insert, false otherwise
@@ -83,8 +84,10 @@ bool HashTable::putCustomer(const int key, Customer* newCustomer)
         return false;
     }
 
+    //hash is both the size and B value
     int hashValue = key % HASH;
 
+    //create a new node for the list
     HashList* newNode = new HashList;
     newNode->value = newCustomer;
     newNode->key = key;
@@ -97,6 +100,7 @@ bool HashTable::putCustomer(const int key, Customer* newCustomer)
     }
     else
     {
+        //traverse until the end of the current list
         HashList* current = table[hashValue].head;
 
         while (current->next != NULL)
@@ -136,6 +140,7 @@ Customer* HashTable::getCustomer(const int key)
     }
     else
     {
+        //traverse until the customer is found, using the hashvalue to compare
         HashList* newNode = table[hashValue].head;
 
         while (newNode != NULL)

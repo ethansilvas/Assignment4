@@ -48,6 +48,7 @@ void History::processTransaction(const string line, CustomerCreator& customerCre
     stringstream ss;
     ss << line;
 
+    //attempt to find the customer, and print out their history if it is valid
     ss >> customerID;
     customerToFind = customerCreator.getCustomer(customerID);
 

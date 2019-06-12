@@ -44,17 +44,25 @@ Movie::~Movie()
  */
 void Movie::parseData(const string& line)
 {
-    stringstream ss;                 // string reader
-    ss << line;                      // insert string info into reader
-    string temp;                     //  temp string to parse the string
-    getline(ss, temp, ',');          // get movie type
-    type = temp[0];                  // assign movie type
-    getline(ss, temp, ',');          // get stock
-    stringstream(temp) >> stock;  // assign stock
-    getline(ss, director, ',');      // assign director
-    getline(ss, title, ',');         // assign title
-    getline(ss, temp, ',');          // get year
-    stringstream(temp) >> year;
+    stringstream ss;
+    ss << line;
+
+    string data;
+
+    //get the movieType
+    getline(ss, data, ',');
+    this->type = data[0];
+
+    //read in stock 
+    getline(ss, data, ',');
+    stringstream(data) >> this->stock;
+
+    //read in data members 
+    getline(ss, director, ',');
+    getline(ss, title, ',');
+    getline(ss, data, ',');
+    stringstream(data) >> this->year;
+
 } //end of parseData
 
 /**
@@ -97,6 +105,7 @@ bool Movie::decreaseStock() {
  * @note   
  * @retval stock count as integer
  */
-int Movie::getStock() {
+int Movie::getStock() 
+{
     return stock;
 }

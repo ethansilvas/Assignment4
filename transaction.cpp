@@ -56,7 +56,7 @@ string Transaction::getErrors()
 
 /**
  * @brief  Helper method to check if customer is valid
- * @note   
+ * @note   Assumes that customers are not null if they are valid
  * @param  customer: Pointer to customer passed in 
  * @param  id: ID of customer
  * @retval True if customer is valid, false if customer is invalid
@@ -70,6 +70,7 @@ bool Transaction::customerValid(Customer* customer, const int id)
         addError("Invalid Customer ID: " + ss.str());
         return false;
     }
+
     return true;
 }
 

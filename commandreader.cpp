@@ -42,6 +42,7 @@ CommandReader::~CommandReader()
  */
 void CommandReader::readCommands(ifstream& file, CustomerCreator& customerCreator, StoreInventory& inventory)
 {
+    //store a transaction to make per line
     string line;
     Transaction* transaction = NULL;
     char type;
@@ -62,6 +63,7 @@ void CommandReader::readCommands(ifstream& file, CustomerCreator& customerCreato
             case 'R':
             case 'I':
             case 'H':
+                //attempt a transaction given the line, print any errors that occur
                 getline(file, line);
                 transaction->processTransaction(line, customerCreator, inventory);
                 errors += transaction->getErrors();

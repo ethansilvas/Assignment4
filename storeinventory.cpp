@@ -21,7 +21,6 @@
  */
 void StoreInventory::processInventory(ifstream& dataFile)
 {
-    errorCount = 0;
     string line;
 
     for (;;)
@@ -108,10 +107,9 @@ Movie* StoreInventory::retrieveMovie(Movie* movie, const char type)
  */
 void StoreInventory::addError(const string error)
 {
-    errorCount++;
+
     ostringstream temp;
-    temp << errorCount;
-    errors += "ERROR: "; //
+    errors += "ERROR: ";
     errors += temp.str() + ") ";
     errors += error;
     errors += "\n";

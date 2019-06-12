@@ -42,16 +42,18 @@ Return::~Return()
  */
 void Return::processTransaction(const string line, CustomerCreator& customerCreator, StoreInventory& inventory)
 {
+    //hold an id number to check for valid customers
     string currentLine;
     int newID;
     Customer* newCustomer = NULL;
 
+    //attempt to create a customer with the given id
     stringstream ss;
     ss << line;
-
     ss >> newID;
     newCustomer = customerCreator.getCustomer(newID);
 
+    //with a valid customer, the transaction can be attempted
     if (customerValid(newCustomer, newID))
     {
         getline(ss, currentLine);
@@ -72,10 +74,13 @@ void Return::readTransaction(const string line, Customer* customer, StoreInvento
     stringstream ss;
     ss << line;
 
+    //store information to build movies 
     char movieType, mediaType;
     string movieData1, movieData2;
     string majorActor;
     int month = 0, year = 0;
+
+    //store movies to make sure that a movie is available to return
     Movie* movieCopy = NULL;
     Movie* customerMovie = NULL;
 
@@ -124,12 +129,14 @@ void Return::readTransaction(const string line, Customer* customer, StoreInvento
                 getline(ss, movieData1, ' ');
                 stringstream(movieData1) >> year;
 
+                //read in first and last of actor
                 ss >> movieData1;
                 majorActor += movieData1;
                 majorActor += ' ';
                 ss >> movieData1;
                 majorActor += movieData1;
 
+                //make copy and attempt return
                 movieCopy = new Classic(majorActor, month, year);
                 customerMovie = inventory.retrieveMovie(movieCopy, movieType);
                 doReturn(customer, customerMovie, movieCopy);
@@ -158,21 +165,22 @@ void Return::readTransaction(const string line, Customer* customer, StoreInvento
  * @note   Adds error to transaction if movie does not exist or invalid return
  * @param  customer: Customer returning the movie
  * @param  movieReturn: movie to be returned
- * @param  movieCopy: 
+ * @param  movieCopy: a temp movie to check for valid returns
  * @retval None
  */
 void Return::doReturn(Customer* customer, Movie* movieReturn, Movie* movieCopy)
 {
     if (movieReturn != NULL)
     {
+        //attempt to return the movie
         bool validReturn = customer->returnMovie(movieReturn);
         if (!validReturn)
         {
-            addError(customer->getCustomerInfo() + "/n" + "Invalid return: " + movieReturn->getInfo());
+            addError("Invalid return: " + customer->getCustomerInfo() + ", " + movieReturn->getInfo());
         }
     }
     else
     {
-        addError("Movie does not exist to return: " + movieCopy->getInfo()); //
+        addError("Movie does not exist to return: " + movieCopy->getInfo());
     }
 }

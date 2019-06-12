@@ -65,25 +65,35 @@ Classic::~Classic()
 void Classic::parseData(const string& line) {
     stringstream ss;
     ss << line;
-    string temp;                 // hold sub string from info string
-    getline(ss, temp, ',');      // get type of movie (char)
-    type = temp[0];
-    getline(ss, temp, ',');      // get stock number (int)
-    stringstream(temp) >> stock;
-    getline(ss, director, ',');  // get director string
-    getline(ss, title, ',');     // get title string
-    ss >> temp;                  // add second name to first name
-    majorActor += temp;
-    majorActor += ' ';
-    ss >> temp;                 // add second name to first name
-    majorActor += temp;
-    ss >> month;                // add month
-    ss >> year;                 // add month
+
+    string data;
+
+    //get the movie type
+    getline(ss, data, ',');
+    type = data[0];
+
+    //read the stock
+    getline(ss, data, ',');
+    stringstream(data) >> stock;
+
+    //read data members
+    getline(ss, director, ',');
+    getline(ss, title, ',');
+
+    //read in both the first and last name for the actor
+    ss >> data;
+    majorActor += data;
+    majorActor += ' ';       //leave a space between first and last
+    ss >> data;
+    majorActor += data;
+
+    ss >> month;
+    ss >> year;
 }
 
 /**
  * @brief  Equality Operator overload to compare 2 movies
- * @note   
+ * @note   Classic movies are equal if their year and actor are equal
  * @param  movie: Other movie object to compare this->movie with
  * @retval True if equal, false if not equal
  */
@@ -97,7 +107,7 @@ bool Classic::operator==(const Movie& movie) const
 
 /**
  * @brief  Comparison operator overload
- * @note   
+ * @note   compare in order of year - month - actor
  * @param  movie: Other movie object to compare this->movie with
  * @retval True if less than, false if greater/equal
  */
@@ -105,18 +115,21 @@ bool Classic::operator<(const Movie& movie) const
 {
 	const Classic& classicCast = static_cast<const Classic&>(movie);
 
+    //year has priority
 	if (this->year < classicCast.year)
     {
         return true;
     }
 	else if (this->year == classicCast.year)
     {
+        //years are equal, compare months
         if (this->month < classicCast.month)
         {
             return true;
         }
         else if (this->month == classicCast.month)
         {
+            //year and months are equal, so compare actors
             if (this->majorActor < classicCast.majorActor)
             {
                 return true;
@@ -139,7 +152,7 @@ bool Classic::operator<(const Movie& movie) const
 
 /**
  * @brief  Operator overload for greater than using less than comparison overload
- * @note   
+ * @note   Uses overloaded > operator
  * @param  movie: Other movie object to compare this->movie with
  * @retval 
  */
@@ -155,7 +168,6 @@ bool Classic::operator>(const Movie& movie) const
  */
 void Classic::display() const 
 {
-	
 	cout << left << setw(33) << title << " "
 		 << setw(18) << director << " " << setw(3) << month << " "
 		 << setw(5) << year << " " << majorActor << endl;
