@@ -62,6 +62,7 @@ void Movie::parseData(const string& line)
     getline(ss, title, ',');
     getline(ss, data, ',');
     stringstream(data) >> this->year;
+
 } //end of parseData
 
 /**
@@ -104,6 +105,7 @@ bool Movie::decreaseStock() {
  * @note   
  * @retval stock count as integer
  */
-int Movie::getStock() {
+int Movie::getStock() 
+{
     return stock;
 }

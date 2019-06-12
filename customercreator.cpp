@@ -41,6 +41,7 @@ void CustomerCreator::createCustomer(ifstream& file) {
     for (;;) 
     {
 
+        //create variables to create a customer, and then read them in
         int id;
         string first, last, temp;
         
@@ -49,8 +50,12 @@ void CustomerCreator::createCustomer(ifstream& file) {
         getline(file, last, ' ');
         getline(file, first);
         
-        if (file.eof()) break;
+        if (file.eof()) 
+        {
+            break;
+        }
         
+        //attempt to create the customer
         Customer* newCustomer = new Customer(id, last, first);
         bool validCustomer = customers.putCustomer(id, newCustomer);
         if (!validCustomer)

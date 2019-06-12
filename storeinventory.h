@@ -30,8 +30,8 @@ public:
     Movie* retrieveMovie(Movie* movie, const char type);
 private:
     //Data members of class
-    int errorCount;
     string errors;
+    
     //helper functions for errors
     void addError(const string error); 
     void displayErrors() const;

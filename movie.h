@@ -42,6 +42,7 @@ public:
 protected:
     //Constructor for Movie
     Movie();
+    
     //Helper functions
     void parseData(const string& line);
 

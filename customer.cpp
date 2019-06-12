@@ -88,9 +88,12 @@ bool Customer::addTransaction(const char type, Movie* movie)
     }
     else
     {
-        //put as new head to reverse
-        newTrans->next = historyHead;
-        historyHead = newTrans;
+        historyNode* current = historyHead;
+        while (current->next != NULL) 
+        {
+            current = current->next;
+        }
+        current->next = newTrans; 
     }
 
     return true;
@@ -179,7 +182,7 @@ string Customer::getCustomerInfo() const
 
 /**
  * @brief  Add a movie borrowed by customer
- * @note   
+ * @note   Always inserts nodes at the head in order to fulfill backwards printing
  * @param  borrowed: Movie borrowed by customer
  * @retval True if successul, false otherwise
  */
@@ -195,6 +198,7 @@ bool Customer::addBorrow(Movie* borrowed)
     }
     else
     {
+        //put at the front
         current->next = transactionHead;
         transactionHead = current;
     }
