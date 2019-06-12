@@ -40,10 +40,9 @@ CustomerCreator::~CustomerCreator()
 void CustomerCreator::createCustomer(ifstream& file) {
     for (;;) 
     {
+
         int id;
-        string last;
-        string first;
-        string temp;
+        string first, last, temp;
         
         getline(file, temp, ' ');
         stringstream(temp) >> id;
