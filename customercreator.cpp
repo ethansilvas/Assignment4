@@ -1,15 +1,42 @@
+//------------------------------- customercreator.cpp --------------------------------------
+// Ethan Silvas, Pranav Sakthivel CSS 343 B
+// Creation Date: May 26, 2019
+// Date of Last Modification: June 11, 2019 
+//------------------------------------------------------------------------------
+// Purpose - Contains implementations to create and manage customers and add them to the HashTable
+// of customers. 
+// -----------------------------------------------------------------------------
+// Assumptions: 
+// -----------------------------------------------------------------------------
+
 #include "customercreator.h"
 
+/**
+ * @brief  No arg constructor for CustomerCreator
+ * @note   
+ * @retval 
+ */
 CustomerCreator::CustomerCreator() 
 {
     
 }
 
+/**
+ * @brief  Destructor for CustomerCreator
+ * @note   
+ * @retval 
+ */
 CustomerCreator::~CustomerCreator() 
 {
     
 }
 
+/**
+ * @brief  Create customer using filestream
+ * @note   Read values from file and insert into new customer
+ * @param  file: Text file containing information to create a customer
+ * @retval None
+ */
 void CustomerCreator::createCustomer(ifstream& file) {
     for (;;) 
     {
@@ -34,6 +61,12 @@ void CustomerCreator::createCustomer(ifstream& file) {
     }
 }
 
+/**
+ * @brief  Accessor method to get customer 
+ * @note   
+ * @param  id: Look up customer using ID
+ * @retval Pointer to Customer looked up by ID
+ */
 Customer* CustomerCreator::getCustomer(const int id) 
 {
     Customer* customer = customers.getCustomer(id);

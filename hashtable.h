@@ -1,3 +1,14 @@
+//------------------------------- hashtable.h --------------------------------------
+// Ethan Silvas, Pranav Sakthivel CSS 343 B
+// Creation Date: May 26, 2019
+// Date of Last Modification: June 11, 2019 
+//------------------------------------------------------------------------------
+// Purpose - Contains implementation for a HashTable designed to store customers
+// by hashing their ID as the key. Header file for HashTable.
+// -----------------------------------------------------------------------------
+// Assumptions: 
+// -----------------------------------------------------------------------------
+
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
 
@@ -7,9 +18,11 @@
 class HashTable
 {
 public:
+    //Constructor and destructor
     HashTable();
     ~HashTable();
 
+    //public methods for hashtable
     Customer* getCustomer(int);
     bool putCustomer(const int, Customer* newCustomer);
 private:
@@ -20,6 +33,7 @@ private:
     void buildTable();
     void deleteTable();
 
+    //Structs needed for hashtable
     struct HashList
     {
         int key;

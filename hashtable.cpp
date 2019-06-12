@@ -1,10 +1,31 @@
+//------------------------------- hashtable.cpp --------------------------------------
+// Ethan Silvas, Pranav Sakthivel CSS 343 B
+// Creation Date: May 26, 2019
+// Date of Last Modification: June 11, 2019 
+//------------------------------------------------------------------------------
+// Purpose - Contains implementation for a HashTable designed to store customers
+// by hashing their ID as the key. 
+// -----------------------------------------------------------------------------
+// Assumptions: 
+// -----------------------------------------------------------------------------
+
 #include "hashtable.h"
 
+/**
+ * @brief  No arg constructor for hashtable
+ * @note   Calls constructor to create hashtable and fill with nulls
+ * @retval 
+ */
 HashTable::HashTable()
 {
     buildTable();
 }
 
+/**
+ * @brief  Helper method for no arg constructor, fills all values with NULL
+ * @note   
+ * @retval None
+ */
 void HashTable::buildTable()
 {
     for (int i = 0; i < HASH; i++)
@@ -13,11 +34,21 @@ void HashTable::buildTable()
     }
 }
 
+/**
+ * @brief  Destructor for HashTable
+ * @note   Calls helper method to delete HashTable
+ * @retval 
+ */
 HashTable::~HashTable()
 {
     deleteTable();
 }
 
+/**
+ * @brief  Helper method for destructor
+ * @note   Traverses through HashTable and deletes all values
+ * @retval None
+ */
 void HashTable::deleteTable()
 {
     for (int i = 0; i < HASH; i++)
@@ -38,6 +69,13 @@ void HashTable::deleteTable()
     }
 }
 
+/**
+ * @brief  Method to insert customer into HashTable
+ * @note   
+ * @param  key: Key to be used for insert (Customer ID)
+ * @param  newCustomer: Customer to be added
+ * @retval True if successful insert, false otherwise
+ */
 bool HashTable::putCustomer(const int key, Customer* newCustomer)
 {
     if (key < 0 || key > 9999)
@@ -77,6 +115,12 @@ bool HashTable::putCustomer(const int key, Customer* newCustomer)
     return true;
 }
 
+/**
+ * @brief  Getter method for Customer using key
+ * @note   
+ * @param  key: Key used to get customer
+ * @retval Pointer to customer requested
+ */
 Customer* HashTable::getCustomer(const int key)
 {
     if (key < 0 || key > 9999)

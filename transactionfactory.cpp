@@ -1,5 +1,21 @@
+// ----------------------------------- transactionfactory.cpp ---------------------
+// Ethan Silvas, Pranav Sakthivel CSS 343 B
+// Creation Date: May 26, 2019
+// Date of Last Modification: June 11, 2019 
+//------------------------------------------------------------------------------
+// Purpose - 
+// -----------------------------------------------------------------------------
+// Assumptions: 
+// -----------------------------------------------------------------------------
+
 #include "transactionfactory.h"
 
+/**
+ * @brief  Method to create a transaction based on the type
+ * @note   B = borrow, R = return, I = new inventory, H - new history
+ * @param  type: Character passed in that contains the type of transaction
+ * @retval Pointer to the transaction created
+ */
 Transaction* TransactionFactory::createTransaction(const char& type)
 {
     Transaction* transaction = NULL;

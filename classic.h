@@ -2,9 +2,10 @@
 //
 // Ethan Silvas, Pranav Sakthivel CSS 343 B
 // Creation Date: May 26, 2019
-// Date of Last Modification: 
+// Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - 
+// Purpose - Header file for Classic. Inherits from Parent class Movie. Contains implementations for methods
+// related to Classic movies. 
 // -----------------------------------------------------------------------------
 // Assumptions: 
 // -----------------------------------------------------------------------------
@@ -17,25 +18,27 @@
 class Classic : public Movie
 {
 public:
+    //Constructors and Destructors
     Classic();
     Classic(const string& newTitle, const int& newMonth, const int& newYear);
     Classic(const string& line);
 	virtual ~Classic();
 
-    //define pure virtuals
+    //Virtual functions
     virtual void display() const;
     virtual string getInfo() const;
 
-    //operator overloads
+    //Operator overloads
     virtual bool operator==(const Movie& rhs) const;
 	virtual bool operator<(const Movie& rhs) const;
     virtual bool operator>(const Movie& rhs) const;
 
 protected:
-    //redefine for extra data that needs to be read in 
+    //Helper methods for additional data
     void parseData(const string& line);
 
 private:
+    //Private class variables
 	string majorActor;
 	int month;    
 };

@@ -2,7 +2,7 @@
 //
 // Ethan Silvas, CSS 343 B
 // Creation Date: April 13, 2019
-// Date of Last Modification: April 27, 2019
+// Date of Last Modification: June 11, 2019 
 //
 // Reused class from assignment 2
 //------------------------------------------------------------------------------
@@ -188,7 +188,7 @@ void BinTree::inorderHelper(Node* subTreeRoot) const
     if (subTreeRoot != NULL)
     {
         inorderHelper(subTreeRoot->left);
-        cout << subTreeRoot->data->getStock();
+        cout << setw(2) << subTreeRoot->data->getStock(); //setw 2
         subTreeRoot->data->display();
         inorderHelper(subTreeRoot->right);
     }

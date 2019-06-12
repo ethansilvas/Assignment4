@@ -1,12 +1,44 @@
+//------------------------------- return.cpp --------------------------------------
+// Ethan Silvas, Pranav Sakthivel CSS 343 B
+// Creation Date: May 26, 2019
+// Date of Last Modification: June 11, 2019 
+//------------------------------------------------------------------------------
+// Purpose - 
+// -----------------------------------------------------------------------------
+// Assumptions: 
+// -----------------------------------------------------------------------------
+
+
 #include "return.h"
 
+/**
+ * @brief  Default no arg constructor for Return 
+ * @note   Initializes errors to ""
+ * @retval 
+ */
 Return::Return() 
 {
     errors = "";
 }
 
-Return::~Return() {}
+/**
+ * @brief  Destructor for Return
+ * @note   
+ * @retval 
+ */
+Return::~Return() 
+{
 
+}
+
+/**
+ * @brief  Method to process the return transaction
+ * @note   
+ * @param  line: String with information for transaction
+ * @param  customerCreator: Customer manager object
+ * @param  inventory: Storeinventory object
+ * @retval None
+ */
 void Return::processTransaction(const string line, CustomerCreator& customerCreator, StoreInventory& inventory)
 {
     string currentLine;
@@ -26,6 +58,14 @@ void Return::processTransaction(const string line, CustomerCreator& customerCrea
     }
 }
 
+/**
+ * @brief  Reads transaction from string passed in
+ * @note   Calls methods to execute transactions from the string
+ * @param  line: String containing information about transaction
+ * @param  customer: Customer to perform the transaction on
+ * @param  inventory: Storeinventory object to change movie stock
+ * @retval None
+ */
 void Return::readTransaction(const string line, Customer* customer, StoreInventory& inventory)
 {
     stringstream ss;
@@ -112,6 +152,14 @@ void Return::readTransaction(const string line, Customer* customer, StoreInvento
     }
 }
 
+/**
+ * @brief  Execute the return operation for the customer 
+ * @note   Adds error to transaction if movie does not exist or invalid return
+ * @param  customer: Customer returning the movie
+ * @param  movieReturn: movie to be returned
+ * @param  movieCopy: 
+ * @retval None
+ */
 void Return::doReturn(Customer* customer, Movie* movieReturn, Movie* movieCopy)
 {
     if (movieReturn != NULL)
@@ -124,6 +172,6 @@ void Return::doReturn(Customer* customer, Movie* movieReturn, Movie* movieCopy)
     }
     else
     {
-        addError("Movie does not exist to return: " + movieCopy->getInfo());
+        addError("Movie does not exist to return: " + movieCopy->getInfo()); //
     }
 }

@@ -1,3 +1,15 @@
+//------------------------------- customer.h --------------------------------------
+// Ethan Silvas, Pranav Sakthivel CSS 343 B
+// Creation Date: May 26, 2019
+// Date of Last Modification: June 11, 2019 
+//------------------------------------------------------------------------------
+// Purpose - Contains implementation for the Customer class. This class stores
+// Transaction history, ID, firstname, last name, and all customer related
+// information. Header file for Customer.
+// -----------------------------------------------------------------------------
+// Assumptions: 
+// -----------------------------------------------------------------------------
+
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 
@@ -9,13 +21,16 @@ class Customer
 {
 public:
 
+//Constructors and destructor
 Customer();
 Customer(const int id, const string last, const string first);
 ~Customer();
 
+//Public methods for Customer
 bool addTransaction(const char type, Movie* movie);
 bool borrowMovie(Movie* toBorrow);
 bool returnMovie(Movie* toReturn);
+
 
 void displayHistory();
 string getCustomerInfo() const;
