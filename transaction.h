@@ -19,12 +19,15 @@
 class Transaction
 {
 public:
+    //Constructor and destructor
     Transaction();
     virtual ~Transaction();
 
+    //Virtual method to process transaction
     virtual void processTransaction(const string line, CustomerCreator& customerCreator, StoreInventory& inventory);
-    string getErrors();  
+    string getErrors();  //getter for errors
 protected:
+    //Helper methods and data members
     bool customerValid(Customer* customer, const int id);
     string errors;
     void addError(const string error);

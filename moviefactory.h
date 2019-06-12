@@ -21,6 +21,7 @@
 class MovieFactory 
 {
 public:
+    //Method to create movie
     static Movie* createMovie(const string& line);
 };
 

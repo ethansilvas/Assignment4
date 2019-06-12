@@ -10,16 +10,34 @@
 
 #include "commandreader.h"
 
+/**
+ * @brief  Default no arg constructor for commandreader
+ * @note   
+ * @retval 
+ */
 CommandReader::CommandReader()
 {
 
 }
 
+/**
+ * @brief  Destructor for CommandReader object
+ * @note   
+ * @retval 
+ */
 CommandReader::~CommandReader()
 {
 
 }
 
+/**
+ * @brief  Method to read commands from a file
+ * @note   Uses helper method to create and process Transaction
+ * @param  file: File containing command information 
+ * @param  customerCreator: Customer manager to create customers based on commands
+ * @param  inventory: Store inventory object to create Movies
+ * @retval None
+ */
 void CommandReader::readCommands(ifstream& file, CustomerCreator& customerCreator, StoreInventory& inventory)
 {
     string line;
@@ -60,6 +78,11 @@ void CommandReader::readCommands(ifstream& file, CustomerCreator& customerCreato
     displayErrors();
 }
 
+/**
+ * @brief  Displays allinvalid command errors received during readCommands
+ * @note   
+ * @retval None
+ */
 void CommandReader::displayErrors() const
 {
     cout << errors;

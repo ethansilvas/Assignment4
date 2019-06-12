@@ -20,6 +20,7 @@
 class TransactionFactory
 {
 public:
+    //Method to create transaction
     static Transaction* createTransaction(const char& type);
 };
 

@@ -16,9 +16,10 @@
 class Inventory : public Transaction 
 {
 public: 
+    //Constructor and destructor
     Inventory();
     ~Inventory();
-
+    //Class methods
     virtual void processTransaction(const string line, CustomerCreator& CustomerCreator, StoreInventory& inventory);
 };
 

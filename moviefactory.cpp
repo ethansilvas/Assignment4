@@ -11,6 +11,12 @@
 
 #include "moviefactory.h"
 
+/**
+ * @brief  Reads first character of line and creates appropriate movie 
+ * @note   Default case breaks switch and does not add movie if the input is anything other than F, D, C
+ * @param  line: String with movie information
+ * @retval Pointer to the movie created
+ */
 Movie* MovieFactory::createMovie(const string& line)
 {
     Movie* movie = NULL;

@@ -10,12 +10,26 @@
 
 #include "customer.h"
 
+/**
+ * @brief  Default no arg constructor. Initializes history list and transaction list
+ * to null.
+ * @note   
+ * @retval 
+ */
 Customer::Customer() 
 {
     historyHead = NULL;
     transactionHead = NULL;
 }
 
+/**
+ * @brief  Constructor using passed in parameters to create Customer
+ * @note   
+ * @param  id: Unique ID of the customer
+ * @param  last: Lastname of customer
+ * @param  first: Firstname of customer
+ * @retval 
+ */
 Customer::Customer(const int id, const string last, const string first) 
 {
     this->id = id;
@@ -25,6 +39,11 @@ Customer::Customer(const int id, const string last, const string first)
     transactionHead = NULL;
 }
 
+/**
+ * @brief  Destructor for customer
+ * @note   Sets all appropriate information to null
+ * @retval 
+ */
 Customer::~Customer()
 {
     historyNode* current = historyHead;
@@ -46,6 +65,13 @@ Customer::~Customer()
     }
 }
 
+/**
+ * @brief  Adds a transaction to customer
+ * @note   
+ * @param  type: Borrow or Return character (B or R)
+ * @param  movie: Movie to be borrowed or returned
+ * @retval True if successful, false otherwise (TODO false?)
+ */
 bool Customer::addTransaction(const char type, Movie* movie)
 {
     historyNode* newTrans = new historyNode;
@@ -68,6 +94,12 @@ bool Customer::addTransaction(const char type, Movie* movie)
     return true;
 }
 
+/**
+ * @brief  Method for Customer to borrow movie
+ * @note   
+ * @param  toBorrow: Movie to be borrowed
+ * @retval True if successful borrow, false otherwise
+ */
 bool Customer::borrowMovie(Movie* toBorrow)
 {
     if (toBorrow->getStock() != 0 && addBorrow(toBorrow))
@@ -79,6 +111,12 @@ bool Customer::borrowMovie(Movie* toBorrow)
     return false;
 }
 
+/**
+ * @brief  Method for customer to return a movie
+ * @note   
+ * @param  toReturn: Movie to be returned
+ * @retval True if successful return, false otherwise
+ */
 bool Customer::returnMovie(Movie* toReturn)
 {
     if (addReturn(toReturn))
@@ -90,6 +128,11 @@ bool Customer::returnMovie(Movie* toReturn)
     return false;
 }
 
+/**
+ * @brief  Display the Customer's transaction history
+ * @note   
+ * @retval None
+ */
 void Customer::displayHistory()
 {
     historyNode* current = historyHead;
@@ -120,6 +163,11 @@ void Customer::displayHistory()
     
 }
 
+/**
+ * @brief  Return customer information as a string
+ * @note   
+ * @retval String with customer information
+ */
 string Customer::getCustomerInfo() const
 {
     ostringstream stringStream;
@@ -127,6 +175,12 @@ string Customer::getCustomerInfo() const
     return  stringStream.str();
 }
 
+/**
+ * @brief  Add a movie borrowed by customer
+ * @note   
+ * @param  borrowed: Movie borrowed by customer
+ * @retval True if successul, false otherwise
+ */
 bool Customer::addBorrow(Movie* borrowed)
 {
     transactionNode* current = new transactionNode;
@@ -144,6 +198,12 @@ bool Customer::addBorrow(Movie* borrowed)
     }
 }
 
+/**
+ * @brief  Add a movie returned by customer
+ * @note   
+ * @param  movie: Movie returned by customer
+ * @retval True if successul, false otherwise
+ */
 bool Customer::addReturn(Movie* movie)
 {
     if (transactionHead == NULL)
@@ -178,6 +238,11 @@ bool Customer::addReturn(Movie* movie)
     return false;
 }
 
+/**
+ * @brief  Getter method for customerID
+ * @note   
+ * @retval integer with customer ID
+ */
 int Customer::getID()
 {
     return this->id;

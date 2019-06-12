@@ -11,7 +11,7 @@
 #include "borrow.h"
 
 /**
- * @brief  Default no arg constructor
+ * @brief  Default no arg constructor, initializes error string to ""
  * @note   
  * @retval 
  */
@@ -21,7 +21,7 @@ Borrow::Borrow()
 }
 
 /**
- * @brief  
+ * @brief  Destructor for Borrow class
  * @note   
  * @retval 
  */
@@ -30,6 +30,14 @@ Borrow::~Borrow()
     
 }
 
+/**
+ * @brief  processes transaction passed in
+ * @note   
+ * @param  line: String with transaction information from file
+ * @param  customerCreator: Customer manager class to create customers
+ * @param  inventory: Storeinventory object
+ * @retval None
+ */
 void Borrow::processTransaction(const string line, CustomerCreator& customerCreator, StoreInventory& inventory)
 {
     string currentLine;
@@ -49,6 +57,14 @@ void Borrow::processTransaction(const string line, CustomerCreator& customerCrea
     }
 }
 
+/**
+ * @brief  Reads transaction from string
+ * @note   
+ * @param  line: String with transaction command
+ * @param  customer: Customer linked to ID from transaction
+ * @param  inventory: Storeinventory object
+ * @retval None
+ */
 void Borrow::readTransaction(const string line, Customer* customer, StoreInventory& inventory)
 {
     stringstream ss;
@@ -134,6 +150,14 @@ void Borrow::readTransaction(const string line, Customer* customer, StoreInvento
     }
 }
 
+/**
+ * @brief  Method to execute borrow action 
+ * @note   
+ * @param  customer: Customer that is borrowing the movie
+ * @param  movieBorrow: Movie being borrowed
+ * @param  movieCopy: 
+ * @retval None
+ */
 void Borrow::doBorrow(Customer* customer, Movie* movieBorrow, Movie* movieCopy)
 {
     if (movieBorrow != NULL)

@@ -17,17 +17,17 @@
 class Comedy : public Movie
 {
 public:
-    //constructors 
+    //constructors and destructors 
     Comedy();
     Comedy(const string& newTitle, const int& newYear);
     Comedy(const string& line);
     virtual ~Comedy();
 
-    //define pure virtuals
+    //Virtual functions
     virtual void display() const;
     virtual string getInfo() const;
 
-    //operator overloads
+    //Operator overloads
     virtual bool operator==(const Movie& rhs) const;
 	virtual bool operator<(const Movie& rhs) const;
     virtual bool operator>(const Movie& rhs) const;

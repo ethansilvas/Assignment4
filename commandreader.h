@@ -18,12 +18,15 @@
 class CommandReader
 {
 public:
+    //Constructor and destructor
     CommandReader();
     ~CommandReader();
 
+    //Public methods 
     void readCommands(ifstream& file, CustomerCreator& customerCreator, StoreInventory& inventory);
     void displayErrors() const;
 private:
+    //String of errors collected
     string errors;
 };
 

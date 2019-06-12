@@ -21,17 +21,20 @@
 class StoreInventory
 {
 public:
+    //Utility methods
     void processInventory(ifstream & dataFile);
     void displayInventory();
 
     Movie* retrieveMovie(Movie* movie, const char type);
 private:
+    //Data members of class
     int errorCount;
     string errors;
-
+    //helper functions for errors
     void addError(const string error); 
     void displayErrors() const;
 
+    //Trees containing movies per genre
     BinTree comedyBST;
     BinTree dramaBST;
     BinTree classicBST;

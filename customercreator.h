@@ -17,12 +17,14 @@
 class CustomerCreator 
 {
 public:
-    
+    //Constructors and Destructor
     CustomerCreator();
     ~CustomerCreator();
+    //Public methods for CustomerCreator
     void createCustomer(ifstream &);
     Customer* getCustomer(const int id);
 private:
+    //Hashtable to store all customers
     HashTable customers;
 };
 

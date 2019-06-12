@@ -10,16 +10,34 @@
 
 #include "history.h"
 
+/**
+ * @brief  Default noarg constructor for History
+ * @note   
+ * @retval 
+ */
 History::History()
 {
 
 }
 
+/**
+ * @brief  Destructor for History
+ * @note   
+ * @retval 
+ */
 History::~History()
 {
 
 }
 
+/**
+ * @brief  Process transaction passed in
+ * @note   
+ * @param  line: String with transaction info
+ * @param  customerCreator: Customer manager to manage customers
+ * @param  inventory: Store inventory object
+ * @retval None
+ */
 void History::processTransaction(const string line, CustomerCreator& customerCreator, StoreInventory& inventory)
 {
     int customerID; 

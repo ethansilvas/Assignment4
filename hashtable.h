@@ -17,9 +17,11 @@
 class HashTable
 {
 public:
+    //Constructor and destructor
     HashTable();
     ~HashTable();
 
+    //public methods for hashtable
     Customer* getCustomer(int);
     bool putCustomer(const int, Customer* newCustomer);
 private:
@@ -30,6 +32,7 @@ private:
     void buildTable();
     void deleteTable();
 
+    //Structs needed for hashtable
     struct HashList
     {
         int key;

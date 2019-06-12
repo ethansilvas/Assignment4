@@ -19,13 +19,16 @@ class Customer
 {
 public:
 
+//Constructors and destructor
 Customer();
 Customer(const int id, const string last, const string first);
 ~Customer();
 
+//Public methods for Customer
 bool addTransaction(const char type, Movie* movie);
 bool borrowMovie(Movie* toBorrow);
 bool returnMovie(Movie* toReturn);
+
 
 void displayHistory();
 string getCustomerInfo() const;

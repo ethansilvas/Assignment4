@@ -11,9 +11,11 @@
 
 #include "movie.h"
 
-// --------------------- Default Constructor -----------------------------------
-// Initialize all data members
-// -----------------------------------------------------------------------------
+/**
+ * @brief  Default no arg constructor for Movie
+ * @note   Initializes all data members
+ * @retval 
+ */
 Movie::Movie()
 {
     this->title = "";
@@ -23,14 +25,22 @@ Movie::Movie()
     this->type = ' ';
 } //end of default constructor 
 
-// --------------------- destructor --------------------------------------------
-// Destructor for Movie
-// -----------------------------------------------------------------------------
-Movie::~Movie() {}
+/**
+ * @brief  Destructor for Movie
+ * @note   
+ * @retval 
+ */
+Movie::~Movie() 
+{
 
-// --------------------- parseData ---------------------------------------------
-//  takes a line from the data file and parses it into a movie's data members
-// -----------------------------------------------------------------------------
+}
+
+/**
+ * @brief  Reads line and parses the data 
+ * @note   
+ * @param  line: String passed in
+ * @retval None
+ */
 void Movie::parseData(const string& line)
 {
     stringstream ss;                 // string reader
@@ -46,6 +56,12 @@ void Movie::parseData(const string& line)
     stringstream(temp) >> year;
 } //end of parseData
 
+/**
+ * @brief  Increase stock of movie
+ * @note   
+ * @param  addToStock: Stock count to increase by
+ * @retval True if stock was increased successfully, false otherwise
+ */
 bool Movie::increaseStock(int addToStock) {
     if (addToStock < 0) 
     { 
@@ -58,6 +74,11 @@ bool Movie::increaseStock(int addToStock) {
     }
 }
 
+/**
+ * @brief  Decrease stock of movie by 1
+ * @note   
+ * @retval True if stock was decreased successfully, false otherwise
+ */
 bool Movie::decreaseStock() {
     if (stock <= 0)
     { 
@@ -70,6 +91,11 @@ bool Movie::decreaseStock() {
     }
 }
 
+/**
+ * @brief  Accessor method that returns stock of Movie
+ * @note   
+ * @retval stock count as integer
+ */
 int Movie::getStock() {
     return stock;
 }

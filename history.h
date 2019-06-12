@@ -16,9 +16,10 @@
 class History : public Transaction
 {
 public:
+//Constructor and destructor
     History();
     ~History();
-
+//Class method to process transaction passed in
     virtual void processTransaction(const string line, CustomerCreator& customerCreator, StoreInventory& inventory);
 };
 

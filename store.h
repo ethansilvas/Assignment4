@@ -21,9 +21,11 @@
 class Store
 {
 public:
+    //Public functions to read files
     void readData(ifstream& movieData, ifstream& customerData);
     void readCommands(ifstream& commandData);
 private:
+    //Private objects
     StoreInventory inventory;
     CommandReader commandReader;
     CustomerCreator customerCreator;
