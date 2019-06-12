@@ -3,9 +3,12 @@
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - 
+// Purpose - Contains implementation to read from a given file and insert into a
+// Binary Search Tree per genre of Movie. Also keeps track of all invalid
+// movies.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Assumed to be a manager class and assumed to use factory pattern.
+// Implemented with processInventory(), retrieveMovie(), and displayInventory().
 // -----------------------------------------------------------------------------
 
 #include "storeinventory.h"
@@ -57,17 +60,17 @@ void StoreInventory::processInventory(ifstream& dataFile)
  */
 void StoreInventory::displayInventory() //
 {
-    cout << "--------------------------------------------------------------" << endl <<
+    cout << "------------------------------------------------------------------" << endl <<
 		"IN TITLE                             DIRECTOR              YEAR" << endl <<
-		"---------------------------------------------------------------------" << endl;
+		"------------------------------------------------------------------" << endl;
     comedyBST.inorderDisplay();
-    cout << "--------------------------------------------------------------" << endl <<
+    cout << "------------------------------------------------------------------" << endl <<
 		"IN TITLE                             DIRECTOR              YEAR" << endl <<
-		"---------------------------------------------------------------------" << endl;
+		"------------------------------------------------------------------" << endl;
     dramaBST.inorderDisplay();
-    cout << "--------------------------------------------------------------" << endl <<
-		"IN TITLE                          DIRECTOR          MO  YEAR  ACTOR" << endl <<
-		"---------------------------------------------------------------------" << endl;
+    cout << "----------------------------------------------------------------------" << endl <<
+		"IN TITLE                             DIRECTOR          MO  YEAR  ACTOR" << endl <<
+		"----------------------------------------------------------------------" << endl;
     classicBST.inorderDisplay();
 }
 

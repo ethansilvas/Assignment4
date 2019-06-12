@@ -3,9 +3,10 @@
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - 
+// Purpose - Used as a parent class for Borrow and Return. Has general implementations
+// for Transactions. Header file for Transaction.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Implemented as a parent class with processTransaction() and getErrors().
 // -----------------------------------------------------------------------------
 
 #ifndef TRANSACTION_H

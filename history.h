@@ -3,9 +3,11 @@
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - 
+// Purpose - Implementation that is able to process and display
+// history for customers. Header file for History.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Customer passed in to get history is non null, 
+// Inherits from Parent class Transaction.
 // -----------------------------------------------------------------------------
 
 #ifndef HISTORY_H

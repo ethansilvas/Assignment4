@@ -3,10 +3,10 @@
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - Inherits from Parent class Movie. Contains implementations for methods
+// Purpose - Contains implementations for methods
 // related to Classic movies. 
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Inherits from Parent class Movie. 
 // -----------------------------------------------------------------------------
 
 #include "classic.h"
@@ -168,7 +168,7 @@ bool Classic::operator>(const Movie& movie) const
  */
 void Classic::display() const 
 {
-	cout << left << setw(30) << title << " "
+	cout << left << setw(33) << title << " "
 		 << setw(18) << director << " " << setw(3) << month << " "
 		 << setw(5) << year << " " << majorActor << endl;
 }//end display

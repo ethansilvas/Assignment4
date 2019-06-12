@@ -6,7 +6,7 @@
 // Purpose - Contains implementation for a HashTable designed to store customers
 // by hashing their ID as the key. 
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: The customer ID is between Positive and less than 10000. 
 // -----------------------------------------------------------------------------
 
 #include "hashtable.h"

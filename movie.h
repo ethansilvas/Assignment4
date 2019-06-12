@@ -4,9 +4,11 @@
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - 
+// Purpose - This is an abstract class for Movie to be used in Child Classes
+// Drama, Comedy, and Classic. Contains implementation for a general Movie.
+// Header file for Movie.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Implemented as an abstract class.
 // -----------------------------------------------------------------------------
 
 #ifndef MOVIE_H

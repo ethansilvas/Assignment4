@@ -6,7 +6,7 @@
 // Purpose - Contains implementations to create and manage customers and add them to the HashTable
 // of customers. 
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Implemented as manager class with createCustomer(), getCustomer()
 // -----------------------------------------------------------------------------
 
 #include "customercreator.h"

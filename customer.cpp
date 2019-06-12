@@ -7,7 +7,7 @@
 // Transaction history, ID, firstname, last name, and all customer related
 // information.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Implemented with all customer related functions.
 // -----------------------------------------------------------------------------
 
 #include "customer.h"

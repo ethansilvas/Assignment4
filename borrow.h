@@ -3,10 +3,10 @@
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - Header file for Borrow. Inherits from Parent class Transaction. Contains implementations for
+// Purpose - Header file for Borrow.  Contains implementations for
 // methods related to borrowing movies.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Inherits from Parent class Transaction.
 // -----------------------------------------------------------------------------
 
 #ifndef BORROW_H

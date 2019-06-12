@@ -3,10 +3,9 @@
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - Inherits from Parent class Transaction. Contains implementations for
-// methods related to borrowing movies.
+// Purpose - Contains implementations for methods related to borrowing movies.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Borrow inherits from Transaction class.
 // -----------------------------------------------------------------------------
 
 #include "borrow.h"
@@ -165,13 +164,9 @@ void Borrow::doBorrow(Customer* customer, Movie* movieBorrow, Movie* movieCopy)
     {
         bool validBorrow = customer->borrowMovie(movieBorrow);
 
-        if (!validBorrow) //Cannot fix, cust info does not print
-                            //when I remove "\n"
+        if (!validBorrow)                   
         {
-            // cout << "custinfo" << customer->getCustomerInfo() << endl;
-            // string temp = customer->getCustomerInfo() + ": " + "Invalid borrow: " + movieBorrow->getInfo();
-            // addError(temp);
-            addError(customer->getCustomerInfo() + "\n" + "Invalid borrow: " + movieBorrow->getInfo());
+            addError("Invalid borrow: " + customer->getCustomerInfo() + ", " + movieBorrow->getInfo());
         }
     }
     else

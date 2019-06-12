@@ -4,9 +4,9 @@
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - 
+// Purpose - Has implementations to create store from text files and commands.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Implemented as manager class with readData() and readCommands().
 // -----------------------------------------------------------------------------
 
 #include "store.h"

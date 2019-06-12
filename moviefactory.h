@@ -4,9 +4,10 @@
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - 
+// Purpose - MovieFactory class has implementations to create Movies from an input string.
+// Header file for MovieFactory.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Implemented using factory method pattern
 // -----------------------------------------------------------------------------
 
 #ifndef MOVIEFACTORY_H

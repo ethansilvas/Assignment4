@@ -5,9 +5,8 @@
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
 // Purpose - Header file for Comedy. Contains implementations for Comedy Movie.
-// Inherits from Parent class Movie. 
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Inherits from Parent class Movie. 
 // -----------------------------------------------------------------------------
 
 #ifndef COMEDY_H
