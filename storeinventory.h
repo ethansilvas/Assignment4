@@ -1,12 +1,14 @@
 //------------------------------- storeinventory.h ----------------------------------
-//
 // Ethan Silvas, Pranav Sakthivel CSS 343 B
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - 
+// Purpose - Contains implementation to read from a given file and insert into a
+// Binary Search Tree per genre of Movie. Also keeps track of all invalid
+// movies. Header file for StoreInventory.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Assumed to be a manager class and assumed to use factory pattern.
+// Implemented with processInventory(), retrieveMovie(), and displayInventory().
 // -----------------------------------------------------------------------------
 
 #ifndef STOREINVENTORY_H

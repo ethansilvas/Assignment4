@@ -3,9 +3,10 @@
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - 
+// Purpose - Uses the factory method pattern to create new Transactions.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Implemented as factory method with a static pointer to 
+// Transaction* createTransaction().
 // -----------------------------------------------------------------------------
 
 #include "transactionfactory.h"

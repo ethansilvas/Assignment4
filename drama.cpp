@@ -5,9 +5,8 @@
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
 // Purpose - Contains implementations for methods for Drama movies. 
-// Inherits from Movie class.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Inherits from Movie class.
 // -----------------------------------------------------------------------------
 
 #include "drama.h"

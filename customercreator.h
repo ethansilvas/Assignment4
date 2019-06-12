@@ -6,7 +6,7 @@
 // Purpose - Class to create and manage customers and add them to the HashTable
 // of customers. Header file for CustomerCreator.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Implemented as manager class with createCustomer(), getCustomer()
 // -----------------------------------------------------------------------------
 
 #ifndef CUSTOMERCREATOR_H

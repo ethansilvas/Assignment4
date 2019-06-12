@@ -5,9 +5,9 @@
 //------------------------------------------------------------------------------
 // Purpose - Class that contains methods to read commands from a text file
 // and process them using the appropriate methods from CustomerCreator and Store
-// Inventory objects.
+// Inventory objects. Uses factory pattern to create transactions.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Implemented as manager class with readCommands(), displayErrors().
 // -----------------------------------------------------------------------------
 
 #ifndef COMMANDREADER_H

@@ -4,10 +4,9 @@
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - Contains implementations for Comedy Movie. Inherits from Parent class
-// Movie. 
+// Purpose - Contains implementations for Comedy Movie. 
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Inherits from Parent class Movie.
 // -----------------------------------------------------------------------------
 
 #include "comedy.h"

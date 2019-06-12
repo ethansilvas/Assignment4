@@ -7,7 +7,7 @@
 // Transaction history, ID, firstname, last name, and all customer related
 // information. Header file for Customer.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Implemented with all customer related functions.
 // -----------------------------------------------------------------------------
 
 #ifndef CUSTOMER_H

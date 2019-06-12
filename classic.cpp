@@ -3,10 +3,10 @@
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - Inherits from Parent class Movie. Contains implementations for methods
+// Purpose - Contains implementations for methods
 // related to Classic movies. 
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Inherits from Parent class Movie. 
 // -----------------------------------------------------------------------------
 
 #include "classic.h"

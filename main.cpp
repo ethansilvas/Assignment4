@@ -4,9 +4,10 @@
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - 
+// Purpose - Main class for testing. Checks for valid text files and calls
+// StoreInventory to process the text files and transactions.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Text files are valid and exist in the working directory.
 // -----------------------------------------------------------------------------
 
 #include "store.h"
