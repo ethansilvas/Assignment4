@@ -12,7 +12,7 @@
 #include "movie.h"
 
 // --------------------- Default Constructor -----------------------------------
-// sets all data members to thier 0 value 
+// Initialize all data members
 // -----------------------------------------------------------------------------
 Movie::Movie()
 {
@@ -24,7 +24,7 @@ Movie::Movie()
 } //end of default constructor 
 
 // --------------------- destructor --------------------------------------------
-// sets all data members to thier 0 value 
+// Destructor for Movie
 // -----------------------------------------------------------------------------
 Movie::~Movie() {}
 

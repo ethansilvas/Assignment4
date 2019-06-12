@@ -1,5 +1,4 @@
 //------------------------------- classic.cpp ----------------------------------
-//
 // Ethan Silvas, Pranav Sakthivel CSS 343 B
 // Creation Date: May 26, 2019
 // Date of Last Modification: 
@@ -11,11 +10,24 @@
 
 #include "classic.h"
 
+/**
+ * @brief  Default no arg constructor
+ * @note   
+ * @retval 
+ */
 Classic::Classic()
 {
 
 } //end default constructor 
 
+/**
+ * @brief  Constructor to create Classic movie from parameters
+ * @note   
+ * @param  newActor: Actor for Classic Movie
+ * @param  newMonth: Month for Classic Movie
+ * @param  newYear: Year for classic movie
+ * @retval 
+ */
 Classic::Classic(const string& newActor, const int& newMonth, const int& newYear) 
 {
     this->majorActor = newActor;
@@ -23,15 +35,32 @@ Classic::Classic(const string& newActor, const int& newMonth, const int& newYear
     this->year = newYear;
 }
 
+/**
+ * @brief  Classic Movie constructor using only one string parameter using helper method
+ * @note   
+ * @param  line: String containing info of Classic movie
+ * @retval 
+ */
 Classic::Classic(const string& line) {
     parseData(line);
 }
 
+/**
+ * @brief  Destructor for Classic Movie
+ * @note   
+ * @retval 
+ */
 Classic::~Classic()
 {
     
 }
 
+/**
+ * @brief  Helper method to parse data for classic movie from string
+ * @note   
+ * @param  line: string from file with movie info
+ * @retval None
+ */
 void Classic::parseData(const string& line) {
     stringstream ss;
     ss << line;
@@ -51,14 +80,26 @@ void Classic::parseData(const string& line) {
     ss >> year;                 // add month
 }
 
- bool Classic::operator==(const Movie& movie) const 
- {
+/**
+ * @brief  Equality Operator overload to compare 2 movies
+ * @note   
+ * @param  movie: Other movie object to compare this->movie with
+ * @retval True if equal, false if not equal
+ */
+bool Classic::operator==(const Movie& movie) const 
+{
 	const Classic& classicCast = static_cast<const Classic&>(movie);
 
 	return (year == classicCast.year && month == classicCast.month
 		&& majorActor == classicCast.majorActor);
 }//end of ==
 
+/**
+ * @brief  Comparison operator overload
+ * @note   
+ * @param  movie: Other movie object to compare this->movie with
+ * @retval True if less than, false if greater/equal
+ */
 bool Classic::operator<(const Movie& movie) const 
 {
 	const Classic& classicCast = static_cast<const Classic&>(movie);
@@ -95,11 +136,22 @@ bool Classic::operator<(const Movie& movie) const
     }
 }//end of <
 
+/**
+ * @brief  Operator overload for greater than using less than comparison overload
+ * @note   
+ * @param  movie: Other movie object to compare this->movie with
+ * @retval 
+ */
 bool Classic::operator>(const Movie& movie) const 
 {
 	return !(*this < movie);
 }//end of <
 
+/**
+ * @brief  Displays classic movie information
+ * @note   
+ * @retval None
+ */
 void Classic::display() const 
 {
 	
@@ -108,6 +160,11 @@ void Classic::display() const
 		 << setw(5) << year << " " << majorActor << endl;
 }//end display
 
+/**
+ * @brief  Returns info of classic movie as string
+ * @note   
+ * @retval Classic movie information as string
+ */
 string Classic::getInfo() const 
 {
     ostringstream ss;

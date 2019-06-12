@@ -1,10 +1,30 @@
+//------------------------------- borrow.cpp --------------------------------------
+// Ethan Silvas, Pranav Sakthivel CSS 343 B
+// Creation Date: May 26, 2019
+// Date of Last Modification: 
+//------------------------------------------------------------------------------
+// Purpose - 
+// -----------------------------------------------------------------------------
+// Assumptions: 
+// -----------------------------------------------------------------------------
+
 #include "borrow.h"
 
+/**
+ * @brief  Default no arg constructor
+ * @note   
+ * @retval 
+ */
 Borrow::Borrow()
 {
     errors = "";
 }
 
+/**
+ * @brief  
+ * @note   
+ * @retval 
+ */
 Borrow::~Borrow()
 {
     

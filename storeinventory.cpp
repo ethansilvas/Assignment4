@@ -1,3 +1,13 @@
+//------------------------------- storeinventory.cpp --------------------------------------
+// Ethan Silvas, Pranav Sakthivel CSS 343 B
+// Creation Date: May 26, 2019
+// Date of Last Modification: 
+//------------------------------------------------------------------------------
+// Purpose - 
+// -----------------------------------------------------------------------------
+// Assumptions: 
+// -----------------------------------------------------------------------------
+
 #include "storeinventory.h"
 
 void StoreInventory::processInventory(ifstream& dataFile)
