@@ -2,9 +2,10 @@
 //
 // Ethan Silvas, Pranav Sakthivel CSS 343 B
 // Creation Date: May 26, 2019
-// Date of Last Modification: 
+// Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - Contains implementations for Classic Movie
+// Purpose - Header file for Classic. Inherits from Parent class Movie. Contains implementations for methods
+// related to Classic movies. 
 // -----------------------------------------------------------------------------
 // Assumptions: 
 // -----------------------------------------------------------------------------

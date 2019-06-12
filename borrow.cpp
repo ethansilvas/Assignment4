@@ -1,9 +1,10 @@
 //------------------------------- borrow.cpp --------------------------------------
 // Ethan Silvas, Pranav Sakthivel CSS 343 B
 // Creation Date: May 26, 2019
-// Date of Last Modification: 
+// Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - 
+// Purpose - Inherits from Parent class Transaction. Contains implementations for
+// methods related to borrowing movies.
 // -----------------------------------------------------------------------------
 // Assumptions: 
 // -----------------------------------------------------------------------------

@@ -1,9 +1,11 @@
 //------------------------------- commandreader.h --------------------------------------
 // Ethan Silvas, Pranav Sakthivel CSS 343 B
 // Creation Date: May 26, 2019
-// Date of Last Modification: 
+// Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - 
+// Purpose - Class that contains methods to read commands from a text file
+// and process them using the appropriate methods from CustomerCreator and Store
+// Inventory objects.
 // -----------------------------------------------------------------------------
 // Assumptions: 
 // -----------------------------------------------------------------------------
