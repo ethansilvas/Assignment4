@@ -3,10 +3,9 @@
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - Inherits from Parent class Transaction. Contains implementations for
-// methods related to borrowing movies.
+// Purpose - Contains implementations for methods related to borrowing movies.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Borrow inherits from Transaction class.
 // -----------------------------------------------------------------------------
 
 #include "borrow.h"

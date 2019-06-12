@@ -3,9 +3,10 @@
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - 
+// Purpose - Contains implementation for the return Transaction. Header file for Return.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Return inherits from Parent class Transaction. Implement with 
+// processTransaction(), doReturn(), and readTransaction().
 // -----------------------------------------------------------------------------
 
 #ifndef RETURN_H

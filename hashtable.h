@@ -6,7 +6,7 @@
 // Purpose - Contains implementation for a HashTable designed to store customers
 // by hashing their ID as the key. Header file for HashTable.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: The customer ID is between Positive and less than 10000. 
 // -----------------------------------------------------------------------------
 
 #ifndef HASHTABLE_H

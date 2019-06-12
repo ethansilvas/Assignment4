@@ -4,9 +4,9 @@
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - 
+// Purpose - MovieFactory class has implementations to create Movies from an input string.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Implemented using factory method pattern
 // -----------------------------------------------------------------------------
 
 #include "moviefactory.h"

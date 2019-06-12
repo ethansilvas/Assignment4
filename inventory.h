@@ -3,9 +3,10 @@
 // Creation Date: May 26, 2019
 // Date of Last Modification: June 11, 2019 
 //------------------------------------------------------------------------------
-// Purpose - 
+// Purpose - Contains implementation for Inventory class which is able to
+// display all comedy, drama, and classic movies. Header file for Inventory.
 // -----------------------------------------------------------------------------
-// Assumptions: 
+// Assumptions: Inherits from parent class Transaction.
 // -----------------------------------------------------------------------------
 
 #ifndef INVENTORY_H
